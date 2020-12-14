@@ -1,5 +1,8 @@
 "use strict";
-/*
+(function(){
+
+
+
 /**
  * TODO:
  * Create a function called 'sayHello' that takes a parameter 'name'.
@@ -9,8 +12,8 @@
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
 
-function sayHello(name){
-    return("Hello " + name);
+function sayHello(name) {
+    return "Hello " + name;
 }
 
 /**
@@ -21,11 +24,8 @@ function sayHello(name){
  * console.log 'helloMessage' to check your work
  */
 
-function sayHello(name){
-    return("Hello " + name);
-}
 let helloMessage = sayHello("Corey")
-
+//console.log(helloMessage);
 /**
  * TODO:
  * Store your name as a string in a variable named 'myName', and pass that
@@ -34,6 +34,7 @@ let helloMessage = sayHello("Corey")
  */
 
 let myName = "Corey"
+//console.log(sayHello(myName));
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
@@ -59,6 +60,9 @@ var random = Math.floor((Math.random() * 3) + 1);
 function isTwo(x) {
     return x === 2;
 }
+//console.log(isTwo(5));
+//console.log(isTwo(2));
+//console.log(isTwo(-2));
 /**
  * TODO:
  * Create a function named 'calculateTip' to calculate a tip on a bill at a
@@ -70,8 +74,8 @@ function isTwo(x) {
  * > calculateTip(0.25, 25.50) // returns 6.375
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
-function calculateTip(x,y) {
-    return x * y;
+function calculateTip(bill,tipPercent) {
+    return (bill * (tipPercent * .01));  //multiply "tipPercent" by .01 to convert to percentage
 }
 /**
  * TODO:
@@ -79,11 +83,10 @@ function calculateTip(x,y) {
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
-function calculateTip() {
-    var bill = prompt("How much was your bill?");
-    var tip = prompt("What percentage do you want to tip?");
-    alert("You should tip: $" + (bill * (tip * .01))); //multiply "tip" var by .01 to convert to percentage
-}
+    let bill = prompt("How much was your bill?");
+    let tipPercentage = prompt("What percentage do you want to tip?");
+    alert(calculateTip(bill, tipPercentage));
+
 
 /**
  * TODO:
@@ -99,19 +102,25 @@ function calculateTip() {
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
-function applyDiscount(){
-
+function applyDiscount(originalPrice, percentOff){
+    let discount = originalPrice * percentOff;
+    let discountedPrice = originalPrice - discount;
+    return discountedPrice;
 }
+console.log(applyDiscount(100, .3))
 
+
+
+//Mini Function Exercise Dec 14 2020
 //1
 function  isFive(input) {
     return input === 5; //boolean
 }
-console.log(isFive(5)); //is true
+//console.log(isFive(5)); //is true
 
 //2
 function isShortWord(string) {
-    return string.length <= 5; // Will
+    return string.length < 5; //Will give a boolean true if the length of the string is less than five chars
 }
 //3
 function isSameLength(string1, string2) {
@@ -123,3 +132,9 @@ function getSmallerSegment(string, number) {
     var makeLowerCase = segment.toLowerCase(); // This makes what the segment var returns lower case.
     return makeLowerCase;
 }
+//console.log(getSmallerSegment("codeup", 3));
+//console.log(getSmallerSegment("CODEUP", 3));
+//console.log(getSmallerSegment("CODEUP", 0));
+
+
+})();
