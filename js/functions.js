@@ -1,6 +1,6 @@
 "use strict";
-(function(){
 
+//console.log("link test")
 
 
 /**
@@ -13,7 +13,7 @@
  */
 
 function sayHello(name) {
-    return "Hello " + name;
+    return "Hello " + name + "!";
 }
 
 /**
@@ -25,7 +25,8 @@ function sayHello(name) {
  */
 
 let helloMessage = sayHello("Corey")
-//console.log(helloMessage);
+console.log(helloMessage);
+
 /**
  * TODO:
  * Store your name as a string in a variable named 'myName', and pass that
@@ -34,7 +35,7 @@ let helloMessage = sayHello("Corey")
  */
 
 let myName = "Corey"
-//console.log(sayHello(myName));
+console.log(sayHello(myName));
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
@@ -57,12 +58,14 @@ var random = Math.floor((Math.random() * 3) + 1);
  * different result everytime you refresh the page if you are using the random
  * number)
  */
-function isTwo(x) {
-    return x === 2;
+function isTwo(num) {
+    return num === 2;
 }
-//console.log(isTwo(5));
-//console.log(isTwo(2));
-//console.log(isTwo(-2));
+console.log(isTwo(random));
+console.log(isTwo(5));
+console.log(isTwo(2));
+console.log(isTwo(-2));
+
 /**
  * TODO:
  * Create a function named 'calculateTip' to calculate a tip on a bill at a
@@ -74,20 +77,26 @@ function isTwo(x) {
  * > calculateTip(0.25, 25.50) // returns 6.375
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
+
 function calculateTip(bill,tipPercent) {
-    return (bill * (tipPercent * .01));  //multiply "tipPercent" by .01 to convert to percentage
+    return (bill * tipPercent);
 }
+
 /**
  * TODO:
  * Use prompt and alert in combination with your calculateTip function to
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
-    let bill = prompt("How much was your bill?");
-    let tipPercentage = prompt("What percentage do you want to tip?");
-    alert(calculateTip(bill, tipPercentage));
 
+    let bill = parseFloat(prompt("How much was your bill?"));
+    let tipPercentage = parseFloat(prompt("What percentage do you want to tip?")) / 100;
 
+    function numToDollars(num){
+        return "$" + num.toFixed(2);
+    }
+    alert("If your bill is " + numToDollars(bill) + " and you want to tip " + tipPercentage +"%" + " then you need to tip: " + numToDollars(calculateTip(bill, tipPercentage)));
+        //The above line (98) needs to be cleaned up. Might need to make a var and then alert that var.
 /**
  * TODO:
  * Create a function named `applyDiscount`. This function should accept a price
@@ -98,20 +107,22 @@ function calculateTip(bill,tipPercent) {
  * Example:
  * > var originalPrice = 100;
  * > var dicountPercent = .2; // 20%
- * > applyDiscount(originalPrice, dicountPercent) // 80
+ * > applyDiscount(originalPrice, discountPercent) // 80
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
-function applyDiscount(originalPrice, percentOff){
-    let discount = originalPrice * percentOff;
+
+function applyDiscount(originalPrice, discountPercent) {
+    let discount = originalPrice * discountPercent;
     let discountedPrice = originalPrice - discount;
     return discountedPrice;
 }
 console.log(applyDiscount(100, .3))
 
-
+//##########################################################################
 
 //Mini Function Exercise Dec 14 2020
+
 //1
 function  isFive(input) {
     return input === 5; //boolean
@@ -122,10 +133,14 @@ function  isFive(input) {
 function isShortWord(string) {
     return string.length < 5; //Will give a boolean true if the length of the string is less than five chars
 }
+//console.log(isShortWord("Codeup"));
+
 //3
 function isSameLength(string1, string2) {
     return string1.length == string2.length; //Will return a boolean value of true if the strings are equal in character count
 }
+//console.log(isSameLength("code", "codeup"));
+
 //4
 function getSmallerSegment(string, number) {
     var segment = (string.substring(number)); //This segments the string to the index specified with number.
@@ -137,4 +152,3 @@ function getSmallerSegment(string, number) {
 //console.log(getSmallerSegment("CODEUP", 0));
 
 
-})();

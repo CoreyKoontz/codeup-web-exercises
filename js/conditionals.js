@@ -20,19 +20,19 @@
  * console.logging the function's return value
  */
 
-//function analyzeColor(color){
-//    if (color === "blue") {
-//        return "blue is the color of the sky";
-//    } else if (color === "red") {
-//        return "Strawberries are red";
-//    } else if (color === "cyan") {
-//        return "I don't know anything about cyan";
-//    } else {
-//        return "Don't worry about that color";
-//    }
-//}
+function analyzeColor(color){
+    if (color === "blue") {
+        return "blue is the color of the sky";
+    } else if (color === "red") {
+        return "Strawberries are red";
+    } else if (color === "cyan") {
+        return "I don't know anything about cyan";
+    } else {
+        return "Don't worry about that color";
+    }
+}
 //console.log(analyzeColor("blue"));
-//console.log(analyzeColor("BLUE")); //Uppercase does not work
+//console.log(analyzeColor("BLUE")); //Uppercase does not work. Remember to use toLowercase when applicable.
 //console.log(analyzeColor("orange"));
 //console.log(analyzeColor("cyan"));
 //console.log(analyzeColor(42));
@@ -87,7 +87,7 @@ function analyzeColor(color) {
  * function to show it to the user.
  */
 
-let color = analyzeColor(prompt("Give me a color"));
+let color = analyzeColor(prompt("Give me a color").toLowerCase());
 alert(color);
 
 /* ########################################################################## */
@@ -111,7 +111,34 @@ alert(color);
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
+function calculateTotal(luckyNumber, totalAmount) {
 
+    switch (luckyNumber) {
+        case 0:
+            return "Your lucky number was 0. Sadly, no discount, your total is: $" + totalAmount;
+            break;
+        case 1:
+            return "Your lucky number was 1. You get a 10% discount! Your original price was: $" + totalAmount + " Your discounted price is: $" + (totalAmount - (totalAmount * .1));
+            break;
+        case 2:
+            return "Your lucky number was 2. You get a 25% discount! Your original price was: $" + totalAmount + " Your discounted price is: $" + (totalAmount - (totalAmount * .25));
+            break;
+        case 3:
+            return "Your lucky number was 3. You get a 35% discount! Your original price was: $" + totalAmount + " Your discounted price is: $" + (totalAmount - (totalAmount * .35));
+            break;
+        case 4:
+            return "Your lucky number was 4. You get a 50% discount! Your original price was: $" + totalAmount + " Your discounted price is: $" + (totalAmount - (totalAmount * .5));
+            break;
+        case 5:
+            return "Your lucky number was 5. You get everything for free! Your original price was: $" + totalAmount + " Your total is: $" + (totalAmount - (totalAmount * 1));
+            break;
+        default:
+            return "that isn't part of the promotion"
+            break;
+
+    }
+
+}
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 6.
@@ -119,8 +146,11 @@ alert(color);
  * and alerts to display to the user what their lucky number was, what their
  * price before the discount was, and what their price after the discount is.
  */
-// Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+//Generate a random number between 0 and 6
+//var luckyNumber = Math.floor(Math.random() * 6);
+//let totalAmount = calculateTotal(luckyNumber,(parseInt(prompt("What was your total bill?"))));
+//alert(totalAmount)
+//
 
 /**
  * TODO:
@@ -138,3 +168,49 @@ alert(color);
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+
+if (confirm("Would you like to enter a number?")) {
+    let userNumber = parseFloat(prompt("Enter a number"));
+    if (userNumber % 2 === 0) {
+        alert(userNumber + " is even.");
+        if (userNumber > 0) {
+            alert(userNumber + " is positive.");
+        } else {
+            alert(userNumber + " is negative.");
+        }
+    } else {
+        if (userNumber % 2 === (1 || -1)) {
+            alert(userNumber + " is odd.");
+            if (userNumber > 0) {
+                alert(userNumber + " is positive.");
+            } else {
+                alert(userNumber + " is negative.");
+            }
+        }
+    }
+}
+    //  switch (true) {
+ //      case (userNumber % 2 === 0):
+ //          alert (userNumber  + " is even.");
+ //          switch (true) {
+ //              case (userNumber < 0):
+ //                  alert (userNumber + " is negative.")
+ //                  break;
+ //                  case (userNumber > 0):
+ //                  alert(userNumber + " is positive.")
+ //                  break;
+ //          }
+ //
+ //      case (userNumber % 2 === (1 || -1)):
+ //          alert (userNumber + " is odd.");
+ //          switch (true) {
+ //              case (userNumber < 0):
+ //                  alert (userNumber + " is negative.")
+ //                  break;
+ //                  case (userNumber > 0):
+ //                  alert(userNumber + " is positive.")
+ //                  break;
+ //          }
+ //  }
+//   alert (userNumber + 100 + " is 100 more than the number you chose.");
+//}
