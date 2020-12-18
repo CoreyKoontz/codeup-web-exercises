@@ -206,6 +206,7 @@ if (confirm("Would you like to enter a number?")) {
     switch (true) {
       case (userNumber % 2 === 0):
           alert (userNumber  + " is even.");
+          alert (userNumber + 100 + " is 100 more than the number you chose.")
           switch (true) {
               case (userNumber < 0):
                   alert (userNumber + " is negative.")
@@ -217,6 +218,7 @@ if (confirm("Would you like to enter a number?")) {
 //// negative odd numbers only return the +100 and nothing else without converting userNumber to absolute value*****
       case (Math.abs(userNumber) % 2 === 1):
           alert (userNumber + " is odd.");
+          alert (userNumber + 100 + " is 100 more than the number you chose.")
           switch (true) {
               case (userNumber < 0):
                   alert (userNumber + " is negative.")
@@ -225,6 +227,8 @@ if (confirm("Would you like to enter a number?")) {
                   alert(userNumber + " is positive.")
                   break;
           }
-  }
-   alert (userNumber + 100 + " is 100 more than the number you chose.");
+        case (typeof(userNumber) == NaN):
+              alert ("That is not a number.")
+            break;
+    }
 }
