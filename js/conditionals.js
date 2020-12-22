@@ -169,66 +169,63 @@ function calculateTotal(luckyNumber, totalAmount) {
  * HINT: The way we prompt for a value could be improved
  */
 
-//if (confirm("Would you like to enter a number?")) {
-//    let userNumber = parseFloat(prompt("Enter a number"));
-//    if (userNumber > 0) {
-//        alert(userNumber + " is positive.");
-//        if (userNumber % 2 === 0) {
-//            alert(userNumber + " is even.");
-//        } else {
-//            alert(userNumber + " is negative")
-//        }
-//    } else {
-//
-//    }
-//}
+
+if (confirm("Would you like to enter a number?")) {
+   let userNumber = parseFloat(prompt("Enter a number"));
+   if (userNumber % 2 === 0) {
+       alert(userNumber + " is even.");
+       if (userNumber > 0) {
+           alert(userNumber + " is positive.");
+           alert (userNumber + 100 + " is 100 more than the number you chose.")
+       } else if (userNumber < 0) {
+           alert(userNumber + " is negative.");
+           alert (userNumber + 100 + " is 100 more than the number you chose.")
+       }
+   } else if (userNumber % 2 !== 0) {
+           alert(userNumber + " is odd.");
+            if (userNumber > 0) {
+               alert(userNumber + " is positive.");
+                alert (userNumber + 100 + " is 100 more than the number you chose.")
+           } else if (userNumber < 0) {
+               alert(userNumber + " is negative.");
+                alert (userNumber + 100 + " is 100 more than the number you chose.")
+           }
+       } else {
+       alert("That is not a number.")
+   }
+   }
+else {
+    alert("Okay, thanks anyways.")
+}
+
 
 //if (confirm("Would you like to enter a number?")) {
 //   let userNumber = parseFloat(prompt("Enter a number"));
-//   if (userNumber % 2 === 0) {
-//       alert(userNumber + " is even.");
-//       if (userNumber > 0) {
-//           alert(userNumber + " is positive.");
-//       } else if (userNumber < 0) {
-//           alert(userNumber + " is negative.");
-//       }
-//   } else if (userNumber % 2 === (1 || -1)) {
-//           alert(userNumber + " is odd.");
-//            if (userNumber > 0) {
-//               alert(userNumber + " is positive.");
-//           } else if (userNumber < 0) {
-//               alert(userNumber + " is negative.");
-//           }
-//       }
-//   }
-if (confirm("Would you like to enter a number?")) {
-   let userNumber = parseFloat(prompt("Enter a number"));
-    switch (true) {
-      case (userNumber % 2 === 0):
-          alert (userNumber  + " is even.");
-          alert (userNumber + 100 + " is 100 more than the number you chose.")
-          switch (true) {
-              case (userNumber < 0):
-                  alert (userNumber + " is negative.")
-                  break;
-                  case (userNumber > 0):
-                  alert(userNumber + " is positive.")
-                  break;
-          }
-//// negative odd numbers only return the +100 and nothing else without converting userNumber to absolute value*****
-      case (Math.abs(userNumber) % 2 === 1):
-          alert (userNumber + " is odd.");
-          alert (userNumber + 100 + " is 100 more than the number you chose.")
-          switch (true) {
-              case (userNumber < 0):
-                  alert (userNumber + " is negative.")
-                  break;
-                  case (userNumber > 0):
-                  alert(userNumber + " is positive.")
-                  break;
-          }
-        case (typeof(userNumber) == NaN):
-              alert ("That is not a number.")
-            break;
-    }
-}
+//    switch (true) {
+//      case (userNumber % 2 === 0):
+//          alert (userNumber  + " is even.");
+//          alert (userNumber + 100 + " is 100 more than the number you chose.")
+//          switch (true) {
+//              case (userNumber < 0):
+//                  alert (userNumber + " is negative.")
+//                  break;
+//                  case (userNumber > 0):
+//                  alert(userNumber + " is positive.")
+//                  break;
+//          }
+//      case (Math.abs(userNumber) % 2 !== 0):
+//          alert (userNumber + " is odd.");
+//          alert (userNumber + 100 + " is 100 more than the number you chose.")
+//          switch (true) {
+//              case (userNumber < 0):
+//                  alert (userNumber + " is negative.")
+//                  break;
+//                  case (userNumber > 0):
+//                  alert(userNumber + " is positive.")
+//                  break;
+//          }
+//        case (typeof(userNumber) == NaN):
+//              alert ("That is not a number.")
+//            break;
+//    }
+//}

@@ -11,8 +11,9 @@ for (var i = 1; i < 100; i++) {
     var userNum = parseFloat(prompt("Please enter an odd number between 1 and 50"));
     if (userNum % 2 !== 0) {
         alert("Yep, that's the right answer.");
-        break;
-    }else{
+        continue;
+    }else {
+        console.log("")
         continue;
     }
 }
