@@ -169,34 +169,33 @@ function calculateTotal(luckyNumber, totalAmount) {
  * HINT: The way we prompt for a value could be improved
  */
 
-
-if (confirm("Would you like to enter a number?")) {
-   let userNumber = parseFloat(prompt("Enter a number"));
-   if (userNumber % 2 === 0) {
-       alert(userNumber + " is even.");
-       if (userNumber > 0) {
-           alert(userNumber + " is positive.");
-           alert (userNumber + 100 + " is 100 more than the number you chose.")
-       } else if (userNumber < 0) {
-           alert(userNumber + " is negative.");
-           alert (userNumber + 100 + " is 100 more than the number you chose.")
-       }
-   } else if (userNumber % 2 !== 0) {
-           alert(userNumber + " is odd.");
+    if (confirm("Would you like to enter a number?")) {
+        let userNumber = parseFloat(prompt("Enter a number"));
+        if (userNumber)
+        if (userNumber % 2 === 0) {
+            alert(userNumber + " is even.");
             if (userNumber > 0) {
-               alert(userNumber + " is positive.");
-                alert (userNumber + 100 + " is 100 more than the number you chose.")
-           } else if (userNumber < 0) {
-               alert(userNumber + " is negative.");
-                alert (userNumber + 100 + " is 100 more than the number you chose.")
-           }
-       } else {
-       alert("That is not a number.")
-   }
-   }
-else {
-    alert("Okay, thanks anyways.")
-}
+                alert(userNumber + " is positive.");
+                alert(userNumber + 100 + " is 100 more than the number you chose.")
+            } else if (userNumber < 0) {
+                alert(userNumber + " is negative.");
+                alert(userNumber + 100 + " is 100 more than the number you chose.")
+            }
+        } else if (userNumber % 2 !== 0) {
+            alert(userNumber + " is odd.");
+            if (userNumber > 0) {
+                alert(userNumber + " is positive.");
+                alert(userNumber + 100 + " is 100 more than the number you chose.")
+            } else if (userNumber < 0) {
+                alert(userNumber + " is negative.");
+                alert(userNumber + 100 + " is 100 more than the number you chose.")
+            }
+        } else {
+            alert("That is not a number.")
+        }
+    } else {
+        alert("Okay, thanks anyways.")
+    }
 
 
 //if (confirm("Would you like to enter a number?")) {
