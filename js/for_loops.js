@@ -3,18 +3,8 @@
 
 //############# For Loop Exercise ##################################
 
-//Q2 as a while loop
-//while loop
-//function showMultiplicationTable(input){
-//    let i =1
-//    while (i < 11) {
-//        console.log(input + ' x ' + i + ' = ' + i * input);
-//        i++
-//    }
-//}
-
 //Q2
-//for loop
+
 //function showMultiplicationTable(input) {
 //    for (let i = 0; i <= 10; i++) {
 //        console.log(input + ' x ' + i + ' = ' + i * input);
