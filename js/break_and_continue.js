@@ -41,8 +41,9 @@ function consoleMessage (userNumber) {
 }
 
 consoleMessage(getUserNumber());
-// ****************  THIS CODE BELOW CRASHED THE COMPUTER DO NOT RUN! **********************************
-//for (var i = 1; i <= 50; i++) {
+// ****************  THE CODE BELOW CRASHED THE COMPUTER DO NOT RUN! **********************************
+// 1st Attempt
+// for (var i = 1; i <= 50; i++) {
 //    var userNum = prompt("Please enter an odd number between 1 and 50");
 //    if (validNum(userNum)) { //if ((userNum % 2 !== 0) && (userNum >= 1 && userNum <= 50) && (!isNaN(userNum))) {
 //        alert("Yep, that's the right answer.");
