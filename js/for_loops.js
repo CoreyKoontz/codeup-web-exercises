@@ -5,34 +5,33 @@
 
 //Q2
 
-//function showMultiplicationTable(input) {
-//    for (let i = 0; i <= 10; i++) {
-//        console.log(input + ' x ' + i + ' = ' + i * input);
-//    }
-//}
-
+function showMultiplicationTable(input) {
+    for (let i = 0; i <= 10; i++) {
+        console.log(input + ' x ' + i + ' = ' + i * input);
+    }
+}
 //Q3
-//for (let i = 0; i < 10; i++) {
-//    let random = Math.floor((Math.random() * 200) + 20);
-//    if (random % 2 === 0) {
-//        console.log(random + ' is even');
-//    } else {
-//        console.log(random + ' is odd');
-//    }
-//}
-//
-////Q4
-//for ( let i = 0; i < 10; i++) {
-//    let x = i;
-//    let xstr = x.toString();
-//    let rep = xstr.repeat(x)
-//    console.log(rep)
-//}
-// //Q5
-//for (var i = 105; i > 5; i - 5) {
-//    console.log(i - 5);
-//    i-=5;
-//}
+for (let i = 0; i < 10; i++) {
+    let random = Math.floor((Math.random() * 200) + 20);
+    if (random % 2 === 0) {
+        console.log(random + ' is even');
+    } else {
+        console.log(random + ' is odd');
+    }
+}
+
+//Q4
+for ( let i = 0; i < 10; i++) {
+    let x = i;
+    let xstr = x.toString();
+    let rep = xstr.repeat(x)
+    console.log(rep)
+}
+ //Q5
+for (var i = 105; i > 5; i - 5) {
+    console.log(i - 5);
+    i-=5;
+}
 
 
 
