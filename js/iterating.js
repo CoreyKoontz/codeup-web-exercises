@@ -58,7 +58,7 @@ function secondElement (input) {
     return input[1];
     }
 function  lastElement (input) {
-    return input[input.length -1];
+    return input[input.length -1]; // .length -(number) allows you to index from the other end of an array
 }
 console.log(firstElement(names));
 console.log(secondElement(names));
