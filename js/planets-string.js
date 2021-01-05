@@ -23,12 +23,14 @@
      * list. You will need an opening AND closing <ul> tags around the entire
      * string, and <li> tags around each planet.
      */
+    // This might be useful when inserting html
+
     var brPlanetsString = planetsArray.join("<br>");
     console.log (brPlanetsString);
 
  //******* Bonus ****************************************************
 
-    // create a string for the start of your list with the opening <ul> tag.
+    // Create a string for the start of your list with the opening <ul> tag.
     var htmlString = '<ul> <li>';
     // Additionally assign the htmlString to the joining of planetsArray
     // with the '</li> <li>' delimiter. This will concat the htmlString
