@@ -92,3 +92,129 @@
      */
 
 })();
+
+
+//################# In Class Exercises (make sure to comment out) ########################
+//Mini Exercise 1
+
+//var beverage = {};
+//    beverage.brandName = 'Coke'
+//    beverage.type = 'Soda'
+//    beverage.volumeInLiters = 1
+//    beverage.priceInCents = 199
+//    beverage.expirationDate = "05 Jan 2022"
+//    beverage['datesOfPreviousSips'] = "No sips taken yet"
+//    beverage.isOpen = false
+//
+//console.log(beverage);
+//
+//var beverage2 = {
+//    brandName: "Sprite",
+//    type: "Soda",
+//    volumeInLiters: 1,
+//    priceInCents: 199,
+//    expirationDate:"05 Jan 2022",
+//    datesOfPreviousSips: ["28/12/2020", "02/01/2021", "05/01/2021"],
+//    isOpen: true
+//}
+//
+//console.log(beverage2);
+
+// ## Mini Exercise 2 ##########################
+
+// var users = [
+//     {
+//         givenName: 'Sam',
+//         age: 21
+//     },
+//     {
+//         givenName: 'Cathy',
+//         age: 34
+//     },
+//     {
+//         givenName: 'Karen',
+//         age: 43
+//     }
+// ];
+
+/*
+  1. Log the names of all users in a single console log separated by spaces. // output = "Sam Cathy Karen"
+  2. Change the names of all users to "John Doe"
+  3. Increase the current age of all users by 1
+
+  Can you accomplish each step using iteration?
+  */
+
+// //1.
+// console.log(users[0].givenName + " " + users[1].givenName + " " + users[2].givenName + " ");
+// //users.forEach(function(user) {
+// //    console.log(user.age);
+// //});
+//
+// //2.
+// users.forEach(function(user) {
+//     user.givenName = "John Doe";
+// });
+// console.log(users);
+//
+// //3.
+// users.forEach(function(user) {
+//     user.age = user.age + 1
+// });
+// console.log(users);
+
+
+
+
+// ## Mini Exercise 3 ##########################
+
+//Create a dog object...
+//   The dog object should have properties for:
+//     breed (string),
+//     weightInPounds (number),
+//     age (number),
+//     color (string),
+//     canBreed (boolean),
+//     shotRecords (array of objects with properties for date and typeOfShot)
+
+//   The dog object should have methods to:
+//     bark() - will console.log “Woof!”
+//     getOlder() - will increase age by 1
+//     disableBreeding() - will set canBreed to false
+//     vaccinate(nameOfVaccination) - takes in an argument for
+//     the name of the vaccination and adds a new shot with the current
+//     date to the shotRecords array
+
+
+var dog = {
+    breed: "Daisy",
+    weightInPounds: 17,
+    age: 1,
+    color: "Black",
+    canBreed: true,
+    shotRecords: [
+        {
+            date: new Date(),
+            typeOfShot: "DHPP"
+        },
+        {
+            date: new Date(),
+            typeOfShot: "Rabies"
+        },
+
+    ],
+    bark: function () {
+        console.log("Woof!");
+    },
+    getOlder: function () {
+        this.age += 1;
+    },
+    disableBreeding: function () {
+        this.breed = false;
+    },
+    vaccinate: function (nameOfShot) {
+        this.shotRecords.push({date: new Date(), typeOfShot: nameOfShot});
+    }
+}
+dog.vaccinate("flu")
+console.log(dog);
