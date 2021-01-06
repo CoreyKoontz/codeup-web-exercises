@@ -11,7 +11,14 @@
      *  > console.log(person.firstName) // "Rick"
      *  > console.log(person.lastName) // "Sanchez"
      */
-
+var person = {
+    firstName: "Corey",
+    lastName: "Koontz",
+    sayHello: function (){
+        return "Hello from " + person.firstName + " " + person.lastName + "!";
+    }
+    }
+console.log(person.sayHello());
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -36,11 +43,14 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+
+    ];
+
+
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -186,35 +196,35 @@
 //     date to the shotRecords array
 
 
-var dog = {
-    breed: "Daisy",
-    weightInPounds: 17,
-    age: 1,
-    color: "Black",
-    canBreed: true,
-    shotRecords: [
-        {
-            date: new Date(),
-            typeOfShot: "DHPP"
-        },
-        {
-            date: new Date(),
-            typeOfShot: "Rabies"
-        },
-
-    ],
-    bark: function () {
-        console.log("Woof!");
-    },
-    getOlder: function () {
-        this.age += 1;
-    },
-    disableBreeding: function () {
-        this.breed = false;
-    },
-    vaccinate: function (nameOfShot) {
-        this.shotRecords.push({date: new Date(), typeOfShot: nameOfShot});
-    }
-}
-dog.vaccinate("flu")
-console.log(dog);
+// var dog = {
+//     breed: "Boston Terrier",
+//     weightInPounds: 17,
+//     age: 1,
+//     color: "Black",
+//     canBreed: true,
+//     shotRecords: [
+//         {
+//             date: new Date(),
+//             typeOfShot: "DHPP"
+//         },
+//         {
+//             date: new Date(),
+//             typeOfShot: "Rabies"
+//         },
+//
+//     ],
+//     bark: function () {
+//         console.log("Woof!");
+//     },
+//     getOlder: function () {
+//         this.age += 1;
+//     },
+//     disableBreeding: function () {
+//         this.breed = false;
+//     },
+//     vaccinate: function (nameOfShot) {
+//         this.shotRecords.push({date: new Date(), typeOfShot: nameOfShot});
+//     }
+// }
+// dog.vaccinate("flu")
+// console.log(dog);
