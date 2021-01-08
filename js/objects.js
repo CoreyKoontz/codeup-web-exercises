@@ -49,8 +49,39 @@ console.log(person.sayHello());
         {name: 'George', amount: 320}
 
     ];
+    // console.log(shoppers[0]); // Object { name: "Cameron", amount: 180 }
+    // console.log(shoppers[0].amount); // 180
+    // console.log(name, 0); // Object { name: "Cameron", amount: 180 }
+    // console.log(shoppers, 0);
 
+function discountPrice (total, discountRate) {
+    total = parseFloat(total)
+    discountRate = parseFloat(discountRate)
+    return total - (total * (discountRate * 0.01));
+}
 
+function spendMore (input){
+    input = parseFloat(input)
+    return 200 - input;
+}
+
+shoppers.forEach(function (shopper) {
+    shopper.amount = parseFloat(shopper.amount).toFixed(2)
+    if (shopper.amount >= 200) {
+        console.log(shopper.name + " spent $" + shopper.amount + " and is receiving a " +
+            "12% discount! The new total is $" + parseFloat(discountPrice(shopper.amount, 12)).toFixed(2))
+    } else {
+        console.log(shopper.name + " spent $" + shopper.amount + " and is receiving no " +
+            "discount. Needs to spend another $" + parseFloat(spendMore(shopper.amount)).toFixed(2) + " to receive the discount.")
+    }
+});
+
+//Should have created variable for each of the required data-points
+    // like: shopperName, amountPriorToDiscount, amountOff(if applicable)
+    // Also create more functions like a discountCalculator function that applies a discount if applicable.
+    // Try and give the code more readability
+    // Because we are dealing in currency create a function that would add the parseFloat and toFixed attributes
+    // to the elements that need to be logged.
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -64,7 +95,25 @@ console.log(person.sayHello());
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
-
+var books = [
+        {
+            title: "Notes From Underground",
+            author: {firstName: "Fyodor", lastName: "Dostoevsky"},
+        },
+        {
+            title: "Permanent Record",
+            author: {firstName: "Edward", lastName: "Snowden"},
+        },{
+            title: "Beloved",
+            author: {firstName: "Toni", lastName: "Morrison"},
+        },{
+            title: "Born to Run",
+            author: {firstName: "Christopher", lastName: "McDougall"},
+        },{
+            title: "The Alchemist",
+            author: {firstName: "Pualo", lastName: "Coelho"},
+        }
+    ]
     /**
      * TODO:
      * Loop through the books array and output the following information about
@@ -89,7 +138,13 @@ console.log(person.sayHello());
      *      ---
      *      ...
      */
-
+    books.forEach(function(book, index) {
+        var bookNumber = index +1
+        console.log("Book # " + bookNumber);
+        console.log("Title: " + book.title);
+        console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+        console.log("-------------")
+    });
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -100,6 +155,46 @@ console.log(person.sayHello());
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+
+
+
+function createBook(nameOfBook, firstNameAuthor, lastNameAuthor) {
+       books.push({
+           title : nameOfBook,
+           author: {
+               firstName: firstNameAuthor,
+               lastName: lastNameAuthor
+           }
+       })
+}
+//using author.split, make it so that the first and last name is entered together
+
+createBook("TESTBOOK","testfirst","testsecond");
+
+// **** Use this (below) to test the createBook function *****************
+
+    // books.forEach(function(book, index) {
+    //     var bookNumber = index +1
+    //     console.log("Book # " + bookNumber);
+    //     console.log("Title: " + book.title);
+    //     console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+    //     console.log("-------------")
+    // });
+
+
+
+
+     // -Create a function named `showBookInfo` that accepts a book object and
+     //  outputs the information described above. Refactor your loop to use your
+     //  `showBookInfo` function.
+
+    function showBookInfo (book) {
+        console.log();
+        console.log();
+        console.log();
+        console.log();
+    }
+
 
 })();
 
