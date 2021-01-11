@@ -6,32 +6,43 @@
 </head>
 <body>
 <form method="POST" action="https://request-inspector.glitch.me/">
-    <h2>Registration</h2>
+    <h2>Register With Us</h2>
     <div>
         <label for="email">Email:</label>
         <input id="email" type="text" name="email" placeholder="Enter your email">
         <label for="password">Password:</label>
-        <input id="password" type="password" name="password" placeholder="Enter your password"><br>
+        <input id="password" type="password" name="password" placeholder="Enter your password">
+        <br>
+
+        <!-- QUESTION: Tried wrapping the password input element in a label and it worked. Did not have
+                       to add a for attribute and it still returned the correct object value. WHY?
+                           Example: <label> Password:<input id="password" type="password" name="password" placeholder="Enter your password"></label> -->
+        <!-- NOTE: Would need a JS function to give the "Show Password" checkbox option -->
     </div>
     <div>
-        <label for="bio">Bio:</label><br>
-        <textarea id="bio" name="bio" placeholder="Tell us about yourself"></textarea><br>
+        <label for="bio">Bio:</label>
+        <br>
+        <textarea id="bio" name="bio" cols="30" rows="10" placeholder="Tell us about yourself"></textarea>
+        <br>
     </div>
     <div>
         <h4>How did you hear about us?</h4>
         <div>
-            <label><input id="billboard" type="checkbox" name="hearAboutUsQuestion" value="billboard">Billboard</label><br>
-            <label><input id="radio advertisement" type="checkbox" name="hearAboutUsQuestion" value="radio advertisement">radio advertisement</label><br>
-            <label><input id="internet advertisement" type="checkbox" name="hearAboutUsQuestion" value="internet advertisement">internet advertisement</label><br>
-            <label><input id="other" type="checkbox" name="hearAboutUsQuestion" value="other">other</label><br>
+            <label><input id="billboard" type="radio" name="hearAboutUsQuestion" value="billboard">Billboard</label>
+            <br>
+            <label><input id="radio advertisement" type="radio" name="hearAboutUsQuestion" value="radio advertisement">radio advertisement</label>
+            <br>
+            <label><input id="internet advertisement" type="radio" name="hearAboutUsQuestion" value="internet advertisement">internet advertisement</label>
+            <br>
+            <label><input id="other" type="radio" name="hearAboutUsQuestion" value="other">other</label>
+            <br>
         </div>
     </div>
     <div>
         <label for="browser"><h4>What browser are you using?</h4></label>
         <div>
-
             <select id="browser" name="browser">
-                <option value="" disabled selected>Pick One</option>
+                <option value="" disabled selected>-Select-</option>
                 <option value="Safari">Safari</option>
                 <option value="Chrome">Chrome</option>
                 <option value="FireFox">FireFox</option>
@@ -41,7 +52,7 @@
     </div>
     <div>
         <br>
-        <button type="submit">Submit</button>
+        <button type="submit">Submit Form</button>
     </div>
 </form>
 </body>
