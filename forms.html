@@ -6,23 +6,43 @@
 </head>
 <body>
 <form method="POST" action="https://request-inspector.glitch.me/">
+    <h2>Registration</h2>
+    <div>
+        <label for="email">Email:</label>
+        <input id="email" type="text" name="email" placeholder="Enter your email">
+        <label for="password">Password:</label>
+        <input id="password" type="password" name="password" placeholder="Enter your password"><br>
+    </div>
+    <div>
+        <label for="bio">Bio:</label><br>
+        <textarea id="bio" name="bio" placeholder="Tell us about yourself"></textarea><br>
+    </div>
+    <div>
+        <h4>How did you hear about us?</h4>
+        <div>
+            <label><input id="billboard" type="checkbox" name="hearAboutUsQuestion" value="billboard">Billboard</label><br>
+            <label><input id="radio advertisement" type="checkbox" name="hearAboutUsQuestion" value="radio advertisement">radio advertisement</label><br>
+            <label><input id="internet advertisement" type="checkbox" name="hearAboutUsQuestion" value="internet advertisement">internet advertisement</label><br>
+            <label><input id="other" type="checkbox" name="hearAboutUsQuestion" value="other">other</label><br>
+        </div>
+    </div>
+    <div>
+        <label for="browser"><h4>What browser are you using?</h4></label>
+        <div>
 
-    <input type="text" name="email" placeholder="Enter your email">
-    <input type="password" name="password" placeholder="Enter your password">
-<label for
-    <textarea name="bio" placeholder="Tell us about yourself"></textarea>
-
-    <input type="checkbox" name="hearAboutUsQuestion" value="billboard">
-    <input type="checkbox" name="hearAboutUsQuestion" value="radio advertisement">
-    <input type="checkbox" name="hearAboutUsQuestion" value="internet advertisement">
-    <input type="checkbox" name="hearAboutUsQuestion" value="other">
-
-    <select name="What web browser are you using?">
-        <option value="Safari">Safari</option>
-        <option value="Chrome">Chrome</option>
-        <option value="FireFox">FireFox</option>
-        <option value="Edge">Edge</option>
-    </select>
+            <select id="browser" name="browser">
+                <option value="" disabled selected>Pick One</option>
+                <option value="Safari">Safari</option>
+                <option value="Chrome">Chrome</option>
+                <option value="FireFox">FireFox</option>
+                <option value="Edge">Edge</option>
+            </select>
+        </div>
+    </div>
+    <div>
+        <br>
+        <button type="submit">Submit</button>
+    </div>
 </form>
 </body>
 </html>
