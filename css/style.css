@@ -1,4 +1,47 @@
 .fancy-header {
+    text-align: center;
     color: purple; /* single line comment */
     text-decoration: underline;
+}
+
+h2 {
+    color: orange;
+    text-decoration: underline;
+}
+
+body {
+    background-color: rgba(152, 66, 211, 0.63); opacity: 25%;
+    background-image: url("../img/pexels-snapwire-412842 (1).jpg");
+    background-size: 100%;
+    background-repeat: repeat-y;
+}
+
+ul {
+    list-style: upper-roman;
+}
+
+* {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+table, th, td {
+    border: 1px solid black;
+    font-size: larger;
+}
+
+.center {
+    margin: 0;
+}
+
+a:link {
+    color: blue;
+}
+a:visited {
+    color: purple;
+}
+a:hover {
+    color: darkgreen;
+}
+a:active {
+    color: red;
 }
