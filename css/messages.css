@@ -6,6 +6,10 @@ body, html {
     font-family: Arial, Ubuntu, sans-serif;
 }
 
+.message {
+    width: 30%;
+}
+
 .message-info {
     background-color: rgb(195,217,253);
     margin: 2px 5px 5px 5px;
