@@ -3,10 +3,14 @@
 }
 body {
     margin: 0;
+    height: 900px;
+    width: 1000px;
 }
 nav {
-    background: darkgray;
+    background: #C4AE8E;
     width: 100%;
+    display: flex;
+    position: fixed;
 }
 ul {
     list-style: none;
@@ -16,12 +20,23 @@ ul {
 }
 nav a {
     text-decoration: none;
-    font-weight: bold;
-    color: red;
-    font-family: Verdana;
+    /*font-weight: bold;*/
+    color: rgb(183,38,25);
+    font-family: 'Roboto', sans-serif;;
     display: inline-block;
-    padding-bottom: 67px;
+    padding: .5em;
+    align-items: center;
 }
 nav a:hover {
-    background: dimgray;
+    background: #D0BFB6;
+}
+ul img {
+    justify-items: center;
+}
+nave {
+    justify-content: space-around;
+}
+img {
+    height: 52px;
+    padding: .001em;
 }
