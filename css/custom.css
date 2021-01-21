@@ -5,15 +5,17 @@
     width: 100%
 }
 .jumbotron {
-    margin: 0;
-    /*width: 100%;*/
-    padding: 0;
-    text-align: center;
-    background-size: 100%;
     background-image: url("../img/pizzapic.png");
     background-repeat: no-repeat;
+    text-decoration-color: black;
+    box-sizing: border-box;
 }
 h1 {
-background-color: white;
-    opacity: 60%;
+    background-color: rgba(255,255,255, .4);
+    opacity: 90%;
+    font-size: 3em;
+    text-align: center;
+}
+.signUp{
+    color: #848487;
 }

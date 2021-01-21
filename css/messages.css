@@ -7,12 +7,14 @@ body, html {
 }
 
 .message {
-    width: 30%;
+    /*width: 30%;*/
+    font-weight: lighter;
+    opacity: 80%;
 }
 
 .message-info {
-    background-color: rgb(195,217,253);
-    margin: 2px 5px 5px 5px;
+    background-color: rgb(195, 217, 253);
+    margin: 5px;
     color: darkblue;
     border-radius: 5px;
     padding: 5px;
@@ -21,7 +23,7 @@ body, html {
 
 .message-success {
     background-color: rgb(194,241,214);
-    margin: 2px 5px 5px 5px;
+    margin: 5px;
     color: green;
     border-radius: 5px;
     padding: 5px;
@@ -30,7 +32,7 @@ body, html {
 
 .message-warning {
     background-color: rgb(252,250,198);
-    margin: 2px 5px 5px 5px;
+    margin: 5px;
     color: rgb(125,103,29);
     border-radius: 5px;
     padding: 5px;
@@ -39,7 +41,7 @@ body, html {
 
 .message-error {
     background-color: rgb(255,205,210);
-    margin: 2px 5px 5px 5px;
+    margin: 5px;
     color: darkred;
     border-radius: 5px;
     padding: 5px;

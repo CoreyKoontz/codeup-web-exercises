@@ -7,9 +7,9 @@ body {
     width: 1000px;
 }
 nav {
-    background: #C4AE8E;
+    background: #29c293;
     width: 100%;
-    display: flex;
+    /*display: flex;*/
     position: fixed;
 }
 ul {
@@ -18,10 +18,14 @@ ul {
     margin: 0;
     display: flex;
 }
+#logo {
+margin: 0;
+    padding: 0;
+}
 nav a {
     text-decoration: none;
     /*font-weight: bold;*/
-    color: rgb(183,38,25);
+    color: #3253a5;
     font-family: 'Roboto', sans-serif;;
     display: inline-block;
     padding: .5em;
@@ -30,10 +34,8 @@ nav a {
 nav a:hover {
     background: #D0BFB6;
 }
-ul img {
-    justify-items: center;
-}
-nave {
+
+nav {
     justify-content: space-around;
 }
 img {
