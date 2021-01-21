@@ -1,23 +1,44 @@
 .fancy-header {
     text-align: center;
-    color: purple; /* single line comment */
+    color: #923025; /* single line comment */
     text-decoration: underline;
+    font-weight: bolder;
+    font-size: 3em;
+}
+
+header p {
+    color: #f8f0d0;
+    font-weight: bold;
 }
 
 h2 {
-    color: orange;
+    color: #e6781b;
     text-decoration: underline;
 }
 
+hr {
+    border: 0;
+    height: 5px;
+    background-image: linear-gradient(to right, #923025, #1e493a);
+}
+
 body {
-    background-color: rgba(152, 66, 211, 0.63); opacity: 25%;
-    background-image: url("../img/pexels-snapwire-412842 (1).jpg");
+    background-color: #1e493a;
+    opacity: 100%;
     background-size: 100%;
+    background-image: url("../img/green-fibers.png");
     background-repeat: repeat-y;
 }
 
 ul {
+    color: #0fb784;
+    list-style: square inside;
+}
+
+ol {
     list-style: upper-roman;
+    color: #0fb784;
+    list-style-position: inside;
 }
 
 * {
@@ -25,8 +46,10 @@ ul {
 }
 
 table, th, td {
-    border: 1px solid black;
+    border: 2px solid #0fb784;
     font-size: larger;
+    color: #f8f0d0;
+    text-align: center;
 }
 
 .center {
@@ -36,12 +59,19 @@ table, th, td {
 a:link {
     color: blue;
 }
+
 a:visited {
     color: purple;
 }
+
 a:hover {
     color: darkgreen;
 }
+
 a:active {
     color: red;
+}
+
+div>img {
+    border: #0fb784 solid 7px;
 }
