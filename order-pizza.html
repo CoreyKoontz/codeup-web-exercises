@@ -34,31 +34,140 @@
         <a class="nav-link signUp"><i class="fas fa-user"> Sign up</i></a>
     </div>
 </nav>
-<div class="container.fluid ">
-    <div class="jumbotron jumbotron-fluid d-none d-sm-block">
-        <h1>Welcome to Pizza World!</h1>
-    </div>
-</div>
-<h2>Build your own pizza!</h2>
-<div>
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-            <a class="nav-link active" href="#"><span class="badge badge-pill badge-secondary">1</span> Size and crust</a>
+
+<main class="container">
+
+    <header class="jumbotron jumbotron-fluid d-none d-sm-block">
+            <h1>Welcome to Pizza World!</h1>
+    </header>
+
+    <h2>Build your own pizza!</h2>
+
+<!--    NAV TABS-->
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="size-tab" data-toggle="tab" href="#size" role="tab" aria-controls="size"
+               aria-selected="true"><span class="badge badge-pill badge-secondary">1</span> Size and Crust</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="cheese-tab" data-toggle="tab" href="#cheese" role="tab" aria-controls="cheese"
+               aria-selected="false"><span class="badge badge-pill badge-secondary">2</span> Cheese and Sauce</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="toppings-tab" data-toggle="tab" href="#toppings" role="tab" aria-controls="toppings"
+               aria-selected="false"><span class="badge badge-pill badge-secondary">3</span> Toppings</a>
         </li>
     </ul>
-</div>
+    <div class="tab-content" id="myTabContent">
+        <form action="" method="POST">
+            <!-- TAB PANE 1        -->
+            <div class="tab-pane fade show active" id="size" role="tabpanel" aria-labelledby="size-tab">
 
+                <div class="card">
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+                    <div class="card-header bg-primary text-white">
+                        Choose size and crust
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card">
+                        <div class="card-header">
+                            Hand Tossed
+                        </div>
+                        <div class="body">
+                            Garlic seasoned crust with a rich, buttery taste.
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item">Small (10")</li>
+                            <li class="list-group-item">Medium (12")</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <div class="card">
+                            <div class="card-header">
+                                Crispy Thin
+                            </div>
+                            <div class="body">
+                                Thin enough for optimum crispy to crunchy ratio.
+                            </div>
+                            <ul class="list-group">
+                                <input type="">
+<!--                                <li class="list-group-item">Small (10")</li>-->
+                                <li class="list-group-item">Large (14")</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer d-flex justify-content-end">
+                    <button class="btn btn-primary">Next Step<i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+            <!-- TAB PANE 2        -->
+            <div class="tab-pane fade" id="cheese" role="tabpanel" aria-labelledby="cheese-tab">
+
+            </div>
+
+            <!-- TAB PANE 3        -->
+            <div class="tab-pane fade" id="toppings" role="tabpanel" aria-labelledby="toppings-tab">
+
+            </div>
+        </form>
+    </div>
+
+<!--    <div>-->
+<!--        <ul class="nav nav-tabs">-->
+<!--            <li class="nav-item">-->
+<!--                <a class="nav-link active" href="#"><span class="badge badge-pill badge-secondary">1</span> Size and-->
+<!--                    crust</a>-->
+<!--            </li>-->
+<!--            <li class="nav-item">-->
+<!--                <a class="nav-link" href="#"><span class="badge badge-pill badge-secondary">2</span> Cheese and-->
+<!--                    Sauce</a>-->
+<!--            </li>-->
+<!--            <li class="nav-item">-->
+<!--                <a class="nav-link" href="#"><span class="badge badge-pill badge-secondary">3</span> Toppings</a></a>-->
+<!--            </li>-->
+<!--        </ul>-->
+<!--    </div>-->
+<!--    <div class="card text-white bg-primary" style="width: 100%;">-->
+<!--        <div class="card-header">-->
+<!--            Choose size and crust-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="card" style="width: 100%;">-->
+<!--        <div class="card-header">-->
+<!--            Hand Tossed-->
+<!--        </div>-->
+<!--        <ul class="list-group list-group-flush">-->
+<!--            <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>-->
+<!--            <li class="list-group-item">-->
+<!--                <label><input id="smallHand" type="radio" name="crustGarlicSize" value="small"> Small (10")</label>-->
+<!--            </li>-->
+<!--            <li class="list-group-item">-->
+<!--                <label><input id="mediumHand" type="radio" name="crustGarlicSize" value="Medium"> Medium (12")</label>-->
+<!--            </li>-->
+<!--        </ul>-->
+<!--        <div class="card-header">-->
+<!--            Crispy Thin-->
+<!--        </div>-->
+<!--        <ul class="list-group list-group-flush">-->
+<!--            <li class="list-group-item">Thin enough for optimum crispy to crunchy ratio.</li>-->
+<!--            <li class="list-group-item">-->
+<!--                <label><input id="small" type="radio" name="crustGarlicSize" value="small"> Small (10")</label>-->
+<!--            </li>-->
+<!--            <li class="list-group-item">-->
+<!--                <label><input id="medium" type="radio" name="crustGarlicSize" value="Medium"> Medium (12")</label>-->
+<!--            </li>-->
+<!--        </ul>-->
+<!--        <div class="card-footer alert-secondary">-->
+<!--            <a class="btn btn-primary float-right" href="#" role="button">Next Step <i class="fas fa-chevron-right"></i></a>-->
+<!--        </div>-->
+<!--    </div>-->
+
+</main>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
