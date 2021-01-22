@@ -1,0 +1,16 @@
+hr {
+    height: 5px;
+    background-color: forestgreen;
+    margin: 2em;
+    legnth: 90%;
+    border: none
+}
+header>p {
+    margin: 2em;
+}
+body{
+    box-sizing: border-box;
+}
+.spacing {
+    margin: 1em 0;
+}
