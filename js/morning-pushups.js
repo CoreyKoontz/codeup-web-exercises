@@ -11,3 +11,12 @@ function isMultipleOf (x, y) {
         return false;
     }
 }
+
+// 26 Jan
+function firstAndLast (array) {
+    var bucket = [];
+    bucket.push(array[0]);
+    bucket.push(array[array.length -1]);
+    return bucket;
+}
+
