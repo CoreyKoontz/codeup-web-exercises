@@ -45,13 +45,27 @@
 
         // TODO: Set text color on every other list item to grey
 
+        var makeGrey = false
+
+        listItems.forEach((li) => {
+            if (makeGrey)
+                li.style.color = 'grey'
+                makeGrey = !makeGrey
+            if (li.getAttribute('data-dbid') === '1')
+                li.style.color = 'blue'
+
+        })
+
 
         // TODO: Set text color of li with dbid = 1 to blue
+        // See last TO-DO
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        // var subParagraphs = ;
+        var subParagraphs = document.querySelectorAll('.sub-paragraph');
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+        Array.from(document.getElementsByClassName('sub-paragraph'))[0].innerHTML = 'Mission Accomplished!'
+
     })();
 </script>
 </body>
