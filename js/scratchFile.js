@@ -10,12 +10,12 @@ $(document).ready(function () {
 //When title text is clicked it will change to a random color
 var randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
 $('#title').click(function () {
-    $('#title').css('color', randomColor);
+    $(this).css('color', randomColor);
 })
 
 // double-click the list and it will get a border
-$('#list').dblclick(function () {
-    $('#list').css('border', '1px solid red')
+$('p').dblclick(function () {
+    $(this).css('fontSize', '18px')
 });
 
 //hover over footer and it will become highlighted
