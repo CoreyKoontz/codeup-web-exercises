@@ -5,6 +5,11 @@
     <title>Hardberger Park FAQ</title>
     <style>
 
+        #titleText {
+            text-align: center;
+            margin-bottom: 2em;
+        }
+
         .invisible {
             visibility: hidden;
         }
@@ -13,6 +18,9 @@
             background-color: rgb(247 245 239);
             color: rgb(80 117 70);
             font-family: 'Nunito Sans', sans-serif;
+        }
+
+        dl {
             text-align: center;
         }
 
@@ -27,34 +35,39 @@
     </style>
 </head>
 <body>
-<h2>Phil Hardberger Park FAQ:</h2>
+<h2 id="titleText">Phil Hardberger Park FAQ:</h2>
 
 <dl>
     <dt>Are bikes allowed?</dt>
     <dd class="invisible">The trails are multi-use, which means
         walkers, runners, bicycles, strollers,
         roller-blades and skateboards are permitted
-        on the trails.</dd>
+        on the trails.
+    </dd>
 
     <dt>Are we allowed to go off-trail?</dt>
     <dd class="invisible">Please stay on the trails. Hiking off-trail
-        is prohibited to protect the native habitat.</dd>
+        is prohibited to protect the native habitat.
+    </dd>
 
     <dt>Can we camp?</dt>
     <dd class="invisible">Camping is not allowed at Phil Hardberger Park.</dd>
 
     <dt>Are dogs allowed?</dt>
     <dd class="invisible">Dogs are allowed but, must be on a 6-foot
-        leash when not inside the dog parks.</dd>
+        leash when not inside the dog parks.
+    </dd>
 
     <dt>Can we feed the wild life?</dt>
     <dd class="invisible">The feeding or touching of any wild animals
-        in the park is prohibited.</dd>
+        in the park is prohibited.
+    </dd>
 
     <dt>Are there BBQ pits?</dt>
     <dd class="invisible">Barbecue pits are available in picnic areas
         where grilling is permitted. Personal barbecue
-        pits and grills are not allowed in the park</dd>
+        pits and grills are not allowed in the park
+    </dd>
 
     <dt>Are fireworks allowed?</dt>
     <dd class="invisible">Fireworks and smoke bombs are prohibited in the park.</dd>
@@ -71,36 +84,43 @@
 
 </dl>
 
-<a href="#" id="link">Show All</a>
+<a href="#" id="link" style="text-align: center">Show All Answers</a>
 
 <h3>Badlands</h3>
 <ul>
-    <li>fact</li>
-    <li>fact</li>
-    <li>fact</li>
-    <li>fact</li>
+    <li>Badlands National Park covers a total area of 244,300 acres.</li>
+    <li>The number of people visiting Badlands in 2019 was 970,998 (All Years)
+    </li>
+    <li>Badlands was made a national park on November 10, 1978.
+    </li>
+    <li>The lowest elevation found in Badlands is 2,365 feet near the Visitor Center.
+    </li>
 </ul>
 
 <h3>Arches</h3>
 <ul>
-    <li>fact</li>
-    <li>fact</li>
-    <li>fact</li>
-    <li>fact</li>
-    <li>Enchanted Rock</li>
+    <li>Acreage: 76,519 acres or 119 square miles.</li>
+    <li>Visitation: 1,539,028 (2017) View more visitation statistics.</li>
+    <li>Highest Elevation: Elephant Butte 5,653 feet.</li>
+    <li>Lowest Elevation: Visitor Center 4,085 feet.</li>
 </ul>
 
 <h3>Carlsbad Caverns</h3>
 <ul>
-    <li>Abilene</li>
-    <li>Big Bend</li>
-    <li>Choke Canyon</li>
-    <li>Davis Mountains</li>
-    <li>Enchanted Rock</li>
+    <li>Size: 46,766 acres (18,925 hectares), including over 33,000 acres
+        (13,354 hectares) designated wilderness.
+    </li>
+    <li>Location and terrain: Southeastern New Mexico; Guadalupe Mountains
+        (primarily limestone) and Permian Basin (primarily gypsum).
+    </li>
+    <li>Elevation: Ranges from 3,596 feet to 6,368 feet (1,036 m to 1,941 m)
+        above sea level.
+    </li>
+    <li>The caves in Carlsbad Caverns are 56°F throughout the year, with high humidity.</li>
 </ul>
 
+<button id="yellowBtn">Last Li to Yellow</button>
 <script src="js/jquery-3.5.1.js"></script>
-
 <script>
     "use strict";
 
@@ -115,9 +135,35 @@
         })
     })
 
+    // Changes dd background color to light blue when clicked
+    $('dd').click(function (e) {
+        $(this).css('backgroundColor', 'lightblue')
+    })
 
+    //  vvv This worked but cant explain why? vvv
 
+    // $('#yellowBtn').click(function(e){
+    //     $('li:last-child').each(function() {
+    //         $(this).css('backgroundColor', 'yellow')
+    //     })
+    // })
 
+    // Highlights the last li in every ul when clicked
+    $('#yellowBtn').click(function (e) {
+        $('ul').each(function () {
+            $(this).children().last().css('backgroundColor', 'yellow');
+        })
+    })
+
+    // Changes the li font weight to bold when an h3 is clicked
+    $('h3').click(function (e) {
+        $(this).next().children().css('fontWeight', 'bold');
+    })
+
+    //Changes the first li font color to blue when any other li in the ul is clicked
+    $('li').click(function (e) {
+            $(this).parent().children().first().css('color', 'blue');
+    });
 
 </script>
 </body>
