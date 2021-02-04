@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hardberger Park FAQ</title>
+    <style>
+        .invisible {
+            visibility: hidden;
+        }
+        body {
+            background-color: rgb(247 245 239);
+            color: rgb(80 117 70);
+            font-family: 'Nunito Sans', sans-serif;
+        }
+
+    </style>
+</head>
+<body>
+<h2>Phil Hardberger Park FAQ:</h2>
+
+<dl>
+    <dt>Are bikes allowed?</dt>
+    <dd class="invisible">The trails are multi-use, which means
+        walkers, runners, bicycles, strollers,
+        roller-blades and skateboards are permitted
+        on the trails.</dd>
+
+    <dt>Are we allowed to go off-trail?</dt>
+    <dd class="invisible">Please stay on the trails. Hiking off-trail
+        is prohibited to protect the native habitat.</dd>
+
+    <dt>Can we camp?</dt>
+    <dd class="invisible">Camping is not allowed at Phil Hardberger Park.</dd>
+
+    <dt>Are dogs allowed?</dt>
+    <dd class="invisible">Dogs are allowed but, must be on a 6-foot
+        leash when not inside the dog parks.</dd>
+
+    <dt>Can we feed the wild life?</dt>
+    <dd class="invisible">The feeding or touching of any wild animals
+        in the park is prohibited.</dd>
+
+    <dt>Are there BBQ pits?</dt>
+    <dd class="invisible">Barbecue pits are available in picnic areas
+        where grilling is permitted. Personal barbecue
+        pits and grills are not allowed in the park</dd>
+
+    <dt>Are fireworks allowed?</dt>
+    <dd class="invisible">Fireworks and smoke bombs are prohibited in the park.</dd>
+
+    <dt>Are we under a Burn-Ban?</dt>
+    <dd class="invisible" id="banON">Yes, we are currently under a Burn-Ban.</dd>
+    <dd class="invisible" id="banOff">No, we are not currently under a burn-ban.</dd>
+
+    <dt>Is tobacco permitted?</dt>
+    <dd class="invisible">Smoking and all forms of tobacco use is prohibited.</dd>
+
+    <dt>Is alcohol permitted?</dt>
+    <dd class="invisible">Alcohol is prohibited in the park.</dd>
+
+</dl>
+
+<a href="#" id="link">Show All</a>
+
+<script src="js/jquery-3.5.1.js"></script>
+
+<script>
+    "use strict";
+
+    // $('.invisible').css({
+    //     'visibility': 'hidden'
+    // })
+
+    // Set elements with class invisible to visibility hidden
+    $(document).ready(function () {
+        $('#link').click(function (e) {
+            $('dd').toggleClass('invisible');
+        })
+    })
+
+
+
+
+
+</script>
+</body>
+
+</html>
