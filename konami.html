@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+</head>
+<body>
+
+<audio id="myAudio">
+    <source src="audio/contraInto.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+    <style>
+        body {
+            background-image: url("img/contra.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: black;
+        }
+    </style>
+</div>
+<script src="js/jquery-3.5.1.js"></script>
+<script>
+    // (function () {
+    "use strict";
+
+
+    var cheatCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13]
+    var userInput = []
+
+    $(document).keyup(function (event) {
+        userInput.push(event.keyCode);
+        if (JSON.stringify(userInput) === JSON.stringify(cheatCode)) {
+            $('body').css("background-image", "url('img/contra2.jpg')");
+            $('audio#myAudio')[0].play();
+        }
+    });
+
+    // Not sure if JSON.stringify was the best option but it worked
+
+    // The JSON.stringify() method converts a JavaScript object or
+    // value to a JSON string, optionally replacing values if a
+    // replacer function is specified or optionally including only
+    // the specified properties if a replacer array is specified.
+    // -MDN
+
+    // })()
+</script>
+
+</body>
+</html>
