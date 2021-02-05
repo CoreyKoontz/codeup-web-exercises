@@ -21,7 +21,7 @@
         }
 
         dl {
-            text-align: center;
+            /*text-align: center;*/
         }
 
         dt {
@@ -30,6 +30,31 @@
 
         dt, dd {
             margin: 10PX;
+        }
+
+        .flex-container {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 3em;
+        }
+
+        .frame {
+            border: solid black 5px;
+            height: 250px;
+            width: 200px;
+
+        }
+
+        .left {
+            background-color: red;
+        }
+
+        .center {
+            background-color: green;
+        }
+
+        .right {
+            background-color: yellow;
         }
 
     </style>
@@ -120,7 +145,22 @@
 </ul>
 
 <button id="yellowBtn">Last Li to Yellow</button>
+
+<!--=============== BONUS =======================================-->
+
+<div>
+    <h2>--- BONUS jQuery Traversing ---</h2>
+    <div class="flex-container">
+        <div class="left frame"></div>
+        <div class="center frame"></div>
+        <div class="right frame"></div>
+        <button class="leftBtn">Shift</button>
+    </div>
+</div>
+
+
 <script src="js/jquery-3.5.1.js"></script>
+
 <script>
     "use strict";
 
@@ -162,7 +202,7 @@
 
     //Changes the first li font color to blue when any other li in the ul is clicked
     $('li').click(function (e) {
-            $(this).parent().children().first().css('color', 'blue');
+        $(this).parent().children().first().css('color', 'blue');
     });
 
 </script>
