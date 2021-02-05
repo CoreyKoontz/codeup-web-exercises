@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Store</title>
+</head>
+<body>
+
+<h1>My Tool Store</h1>
+
+<table id="products">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Categories</th>
+    </tr>
+    </thead>
+    <tbody id="insertProducts"></tbody>
+</table>
+
+<button id="refresh">Refresh Inventory</button>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script>
+    (function () {
+        "use strict";
+        // TODO: Create an AJAX GET request for the file under data/inventory.json
+
+        var currentData = $.get('data/inventory.json').done(handleResponse);
+
+        // TODO: Take the data from inventory.json and append it to the products table
+        //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+        //             its contents and fields
+        //       HINT: You will want to target #insertProducts for your new HTML elements
+
+        function handleResponse(items) {
+            let html = "";
+            items.forEach(function (item) {
+                let itemHtml = '<tr>';
+                itemHtml += '<td>' + item.title + '</td>';
+                itemHtml += '<td>' + item.quantity + '</td>';
+                itemHtml += '<td>$' + item.price + '</td>';
+                itemHtml += '<td>' + item.categories + '</td>';
+                itemHtml += '</tr>';
+                html += itemHtml;
+            });
+            $('#insertProducts').html(html);
+            console.log('items updated');
+        }
+
+// When the refresh button is clicked the handleResponse function is triggered again
+        //Cannot get it to work
+        $('#refresh').click(currentData);
+
+    })();
+</script>
+
+</body>
+</html>
