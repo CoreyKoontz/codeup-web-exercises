@@ -44,36 +44,36 @@
     "use strict"
 
     ////------- String Method -------------------
-    //
-    //$.get('data/blog.json').done(handleResponse);
-    //
-    // function handleResponse(items) {
-    //     let html = "";
-    //     items.forEach(function (item) {
-    //         let itemHtml = '<div class="row card m-3 w-75"';
-    //         itemHtml += '<div class="card-body">'
-    //         itemHtml += '<h4 class="card-title m-2">' + item.title + '</h4>';
-    //         itemHtml += '<h6 class="card-subtitle m-3 text-muted">' + item.date + '</h6>';
-    //         itemHtml += '<p class="card-text m-3">' + item.content + '</p>';
-    //         itemHtml += '<div class="card-footer text-muted text-right">' + item.categories + '</div>';
-    //         itemHtml += '</div></div>';
-    //         html += itemHtml;
-    //
-    //
-    //     });
-    //     $('#posts').html(html);
-    // }
+
+    $.get('data/blog.json').done(handleResponse);
+
+    function handleResponse(items) {
+        let html = "";
+        items.forEach(function (item) {
+            let itemHtml = '<div class="row card m-3 w-75"';
+            itemHtml += '<div class="card-body">'
+            itemHtml += '<h4 class="card-title m-2">' + item.title + '</h4>';
+            itemHtml += '<h6 class="card-subtitle m-3 text-muted">' + item.date + '</h6>';
+            itemHtml += '<p class="card-text m-3">' + item.content + '</p>';
+            itemHtml += '<div class="card-footer text-muted text-right">' + item.categories + '</div>';
+            itemHtml += '</div></div>';
+            html += itemHtml;
+
+
+        });
+        $('#posts').html(html);
+    }
 
 
     ////------- jQuery Method --------------------
 
-    $.get('data/blog.json').done(renderWithjQuery);
-
-    function renderWithjQuery (items) {
-        items.forEach(function(item) {
-            let $div = $('<div id="posts">').addClass('col-sm-6')
-        }
-    }
+    // $.get('data/blog.json').done(renderWithjQuery);
+    //
+    // function renderWithjQuery (items) {
+    //     items.forEach(function(item) {
+    //         let $div = $('<div id="posts">').addClass('col-sm-6')
+    //     }
+    // }
 
 
 </script>

@@ -55,11 +55,10 @@
                 html += itemHtml;
             });
             $('#insertProducts').html(html);
-            console.log('items updated');
+            console.log('items up to date');
         }
 
-// When the refresh button is clicked the handleResponse function is triggered again
-        //Cannot get it to work
+
         $('#refresh').click(function(e) {
             $.get('data/inventory.json').done(handleResponse);
         });
