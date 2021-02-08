@@ -1,5 +1,8 @@
 (function (){
 "use strict"
+    $(document).ready(function () {
+        alert('DOM has finished loading')
+    })
 // // Selectors Exercise
 // $(document).ready(function () {
 //
