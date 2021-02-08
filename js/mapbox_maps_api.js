@@ -62,7 +62,7 @@ let restaurants = [
         address: "448 S Main St, Boerne, TX 78006",
         coordinates:[-98.72999370019609, 29.791090898468084],
         categories: [
-            "Burgers", "Brewery"
+            "Burgers", " Brewery"
         ],
         price: "$$"
     },
@@ -71,7 +71,7 @@ let restaurants = [
         address: "402 River Rd, Boerne, TX 78006",
         coordinates:[-98.72595965782648, 29.79049499640117],
         categories: [
-            "American", "Brewery"
+            "American", " Brewery"
         ],
         price: "$$"
     },
@@ -82,7 +82,7 @@ let restaurants = [
 restaurants.forEach(function (restaurant) {
     let popup = new mapboxgl.Popup({offset: 25})
         .setHTML(
-            "<h1>" + restaurant.name + "</h1>" +
+            "<h2>" + restaurant.name + "</h2>" +
             "<h4><em>" + restaurant.categories + "</em></h4>" +
             "<p>" + restaurant.address + "</p>");
     let marker = new mapboxgl.Marker()
@@ -92,3 +92,19 @@ restaurants.forEach(function (restaurant) {
 })
 
 // Figure out the reverse geocoding to avoid hardcoding the coordinates into the array
+
+
+//============== BONUS ============================================================
+
+// 1. Add additional information to popup
+        // Completed above
+
+// 2. Add a select input that allows the user to
+//    change the zoom level to 5, 15, or 20.
+
+$('select').change(function () {
+    var str = "";
+    $('select option').each(function () {
+
+    })
+})

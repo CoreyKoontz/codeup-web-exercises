@@ -1,0 +1,8 @@
+#map {
+    border: 4px solid rgb(0 168 197);
+    border-radius: 10px;
+}
+
+#map>h1 {
+    color: blue;
+}
