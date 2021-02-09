@@ -2,6 +2,10 @@
     border: 2px solid red;
 }
 
-.weatherBoxes {
+.weatherBox {
     border: 2px solid green;
+}
+
+.card {
+    text-align: center;
 }

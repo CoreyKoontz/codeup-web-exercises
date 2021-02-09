@@ -36,23 +36,33 @@ $.get("https://api.openweathermap.org/data/2.5/onecall", {
      lat: 29.4241,
      lon: -98.4936,
      units: "imperial",
-     exclude: ["minutely", "hourly"]
+     exclude: "minutely, hourly"
  }).done(function(data) {
      console.log(data)
      handleResponse(data)
  });
 
-// Setting up handle response to populate the html:
+// Setting up handle response to iterate through the returned data and populate the html:
 function handleResponse (data) {
 let days = data.daily;
-// console.log(days);
+let html = "";
 for(var i = 0; i < 5; i++) {
-    let iconCode = days[i].weather[0].icon;
+    // let date = ;
+    let iconCode =
+        days[i].weather[0].icon;
     let tempHigh = Math.round(days[i].temp.max);
     let tempLow = Math.round(days[i].temp.min);
     let description = days[i].weather[0].description;
-    console.log(iconCode, tempHigh, tempLow,description)
+// Embedding into the HTML using string method:
+    let itemHtml = "<div class='card'>"
+    itemHtml += '<h3>' + iconCode + '</h3>';
+    itemHtml += '<h3>' + tempHigh + '</h3>';
+    itemHtml += '<h3>' + tempLow + '</h3>';
+    itemHtml += '<h3>' + description + '</h3>';
+    itemHtml += '</div>';
+
+    html += itemHtml;
+
     }
-
-
+    $('#insertWeatherBoxes').html(html);
 }
