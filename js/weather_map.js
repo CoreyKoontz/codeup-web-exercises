@@ -48,14 +48,13 @@ let days = data.daily;
 let html = "";
 for(var i = 0; i < 5; i++) {
     // let date = ;
-    let iconCode =
-        days[i].weather[0].icon;
+    let iconCode = days[i].weather[0].icon;
     let tempHigh = Math.round(days[i].temp.max);
     let tempLow = Math.round(days[i].temp.min);
     let description = days[i].weather[0].description;
 // Embedding into the HTML using string method:
     let itemHtml = "<div class='card'>"
-    itemHtml += '<h3>' + iconCode + '</h3>';
+    itemHtml += "<img src='img/weather-map-icons/" + iconCode + ".jpg'>" // Refactored the image names of the local icons to work with this
     itemHtml += '<h3>' + tempHigh + '</h3>';
     itemHtml += '<h3>' + tempLow + '</h3>';
     itemHtml += '<h3>' + description + '</h3>';
@@ -66,3 +65,38 @@ for(var i = 0; i < 5; i++) {
     }
     $('#insertWeatherBoxes').html(html);
 }
+
+// Setting up a function to take in an icon code and return the icon.
+// Could have used 'hot linking' but used local storage instead
+
+// function iconTranslate (input) {
+//     switch(input) {
+//         case "01d":
+//             return "<img src='img/weather-map-icons/01d.jpg>";
+//             break;
+//         case "01d":
+//             return "<img src='img/weather-map-icons/01d.jpg>";
+//             break;
+//         case "01d":
+//             return "<img src='img/weather-map-icons/01d.jpg>";
+//             break;
+//         case "01d":
+//             return "<img src='img/weather-map-icons/01d.jpg>";
+//             break;
+//         case "01d":
+//             return "<img src='img/weather-map-icons/01d.jpg>";
+//             break;
+//         case "01d":
+//             return "<img src='img/weather-map-icons/01d.jpg>";
+//             break;
+//         case "01d":
+//             return "<img src='img/weather-map-icons/01d.jpg>";
+//             break;
+//         case "01d":
+//             return "<img src='img/weather-map-icons/01d.jpg>";
+//             break;
+//         case "01d":
+//             return "<img src='img/weather-map-icons/01d.jpg>";
+//             break;
+//     }
+// }
