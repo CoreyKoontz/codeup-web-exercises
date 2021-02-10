@@ -3,15 +3,20 @@
 }
 
 .weatherBox {
-    border: 2px solid green;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    display: flex;
 }
 
 .card {
     text-align: center;
+    align-content: center;
     background-image: linear-gradient(45deg, skyblue, gray);
+    padding: 0;
 }
 
-h3 {
-
+.card-footer {
+    padding: 0;
+    margin: 0;
+    background: none;
 }
+
