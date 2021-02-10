@@ -47,17 +47,18 @@ function handleResponse (data) {
 let days = data.daily;
 let html = "";
 for(var i = 0; i < 5; i++) {
-    // let date = ;
+    let date = dateMaker(i);
     let iconCode = days[i].weather[0].icon;
     let tempHigh = Math.round(days[i].temp.max);
     let tempLow = Math.round(days[i].temp.min);
     let description = days[i].weather[0].description;
-// Embedding into the HTML using string method:
-    let itemHtml = "<div class='card'>"
+// Embedding into the div.card element using string method:
+    let itemHtml = "<div class='card col-2'>"
+    itemHtml += '<span>' + date + '</span>';
     itemHtml += "<img src='img/weather-map-icons/" + iconCode + ".jpg'>" // Refactored the image names of the local icons to work with this
-    itemHtml += '<h3>' + tempHigh + '</h3>';
-    itemHtml += '<h3>' + tempLow + '</h3>';
-    itemHtml += '<h3>' + description + '</h3>';
+    itemHtml += '<h3>' + 'H ' + tempHigh + '</h3>';
+    itemHtml += '<h3 class="text-muted">' + 'L ' + tempLow + '</h3>';
+    itemHtml += '<p>' + description + '</p>';
     itemHtml += '</div>';
 
     html += itemHtml;
@@ -66,37 +67,21 @@ for(var i = 0; i < 5; i++) {
     $('#insertWeatherBoxes').html(html);
 }
 
-// Setting up a function to take in an icon code and return the icon.
-// Could have used 'hot linking' but used local storage instead
+// Trying to manipulate the date() object to work with the weather cards.
+// Pass the dateMaker function the index number (i) in the handleResponse.
+// The setDate() method sets the day of the Date object relative
+// to the beginning of the currently set month. -MDN
+// The getDate() method returns the day of the month for the specified
+// date according to local time. -MDN
+function dateMaker (num) {
+    let date = new Date();
+    date.setDate(date.getDate() + num)
+    return date.toDateString().slice(0,10);
+}
 
-// function iconTranslate (input) {
-//     switch(input) {
-//         case "01d":
-//             return "<img src='img/weather-map-icons/01d.jpg>";
-//             break;
-//         case "01d":
-//             return "<img src='img/weather-map-icons/01d.jpg>";
-//             break;
-//         case "01d":
-//             return "<img src='img/weather-map-icons/01d.jpg>";
-//             break;
-//         case "01d":
-//             return "<img src='img/weather-map-icons/01d.jpg>";
-//             break;
-//         case "01d":
-//             return "<img src='img/weather-map-icons/01d.jpg>";
-//             break;
-//         case "01d":
-//             return "<img src='img/weather-map-icons/01d.jpg>";
-//             break;
-//         case "01d":
-//             return "<img src='img/weather-map-icons/01d.jpg>";
-//             break;
-//         case "01d":
-//             return "<img src='img/weather-map-icons/01d.jpg>";
-//             break;
-//         case "01d":
-//             return "<img src='img/weather-map-icons/01d.jpg>";
-//             break;
-//     }
-// }
+
+// const currentDate = new .Intl.DateTimeFormat({
+//     month: 'long',
+//     day: 'numeric'
+// });
+// console.log(currentDate)
