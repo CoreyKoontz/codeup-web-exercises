@@ -29,17 +29,23 @@
 // ------- Embedding html into the daily weather display boxes -----------------------
 
 // setting up variables to call the data from Weather Map
+var longitude = -98.4936
+var latitude = 29.4241
 
 // Get all Data:
-$.get("https://api.openweathermap.org/data/2.5/onecall", {
-    APPID: OWM_TOKEN,
-    lat: 29.4241,
-    lon: -98.4936,
-    units: "imperial",
-    exclude: "minutely, hourly"
-}).done(function (data) {
-    handleResponse(data)
-});
+getData();
+
+function getData() {
+    $.get("https://api.openweathermap.org/data/2.5/onecall", {
+        APPID: OWM_TOKEN,
+        lat: latitude,
+        lon: longitude,
+        units: "imperial",
+        exclude: "minutely, hourly"
+    }).done(function (data) {
+        handleResponse(data)
+    });
+}
 
 // Setting up handle response to iterate through the returned data and populate the html:
 function handleResponse(data) {
@@ -52,7 +58,7 @@ function handleResponse(data) {
         let tempLow = Math.round(days[i].temp.min);
         let description = days[i].weather[0].description;
 // Embedding into the div.card element using string method:
-        let itemHtml = "<div class='card' style='width: 17rem'>"
+        let itemHtml = "<div class='card col-2' style='width: 17rem'>"
         itemHtml += '<span>' + date + '</span>';
         itemHtml += "<img src='img/weather-map-icons/" + iconCode + ".jpg'>" // Refactored the image names of the local icons to work with this
         itemHtml += '<h5>' + 'H ' + tempHigh + '</h5>';
@@ -92,47 +98,42 @@ mapboxgl.accessToken = MAPBOX_TOKEN
 var map = new mapboxgl.Map({
     container: 'map', // container ID
     style: 'mapbox://styles/mapbox/streets-v11', // style URL
-    center: [-98.7320, 29.7947], // starting position [lng, lat]
+    center: [longitude, latitude], // starting position [lng, lat]
     zoom: 8 // starting zoom
 });
 
 // Map Nav Controls
 map.addControl(new mapboxgl.NavigationControl());
 
-// map.addControl(
-//     new MapboxGeocoder({
-//         accessToken: mapboxgl.accessToken,
-//         mapboxgl: mapboxgl
-//     })
 
 //Starting Draggable Marker (default point)
 var marker = new mapboxgl.Marker({
     draggable: true
 })
-    .setLngLat([-98.7320, 29.7947])
+    .setLngLat([longitude, latitude])
     .addTo(map);
 
 // Adding functionality to draggable marker
 function onDragEnd() {
     var lngLat = marker.getLngLat();
-    var longitude = lngLat.lng;
-    var latitude = lngLat.lat;
+    longitude = lngLat.lng;
+    latitude = lngLat.lat;
 
-    $.get("https://api.openweathermap.org/data/2.5/onecall", {
-        APPID: OWM_TOKEN,
-        lat: latitude,
-        lon: longitude,
-        units: "imperial",
-        exclude: "minutely, hourly"
-    }).done(function (data) {
-        handleResponse(data)
-    });
+    getData();
 }
-
 marker.on('dragend', onDragEnd);
 
 //------- Search by City geocode ----------------------------------------
 
-let searchInput = $("input")
-console.log(searchInput.val())
+
+
+$(".btn").click(function (e) {
+    e.preventDefault()
+    let searchInput = $("#input").val();
+    geocode(searchInput, MAPBOX_TOKEN).then(function (data) {
+        console.log(data);
+        getData();
+    })
+
+})
 
