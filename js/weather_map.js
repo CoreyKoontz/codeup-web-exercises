@@ -1,8 +1,8 @@
 "use strict"
 
 // setting up global variables to call the data from Weather Map
-var longitude = -98.4936
-var latitude = 29.4241
+var longitude = -98.7320
+var latitude = 29.7947
 
 // Calling initial getData function
 getData();
@@ -33,22 +33,51 @@ function handleResponse(data) {
     for (var i = 0; i < 5; i++) {
         let date = dateMaker(i);
         let iconCode = days[i].weather[0].icon;
+        cardColor(iconCode);
         let tempHigh = Math.round(days[i].temp.max);
         let tempLow = Math.round(days[i].temp.min);
         let description = days[i].weather[0].description;
 // Embedding into the div.card element using string method:
         let itemHtml = "<div class='card col-2' style='width: 17rem'>"
-        itemHtml += '<span>' + date + '</span>';
+        itemHtml += '<span class="date-text">' + date + '</span>';
         itemHtml += "<img src='img/weather-map-icons/" + iconCode + ".jpg'>" // Refactored the image names of the local icons to work with this
         itemHtml += '<h5>' + 'H ' + tempHigh + '</h5>';
         itemHtml += '<h5 class="text-muted">' + 'L ' + tempLow + '</h5>';
         itemHtml += '<p class="card-footer my-1">' + description + '</p>';
         itemHtml += '</div>';
-
         html += itemHtml;
-
     }
     $('#insertWeatherBoxes').html(html);
+
+    //------- Map -----------------------------------------------------
+
+    mapboxgl.accessToken = MAPBOX_TOKEN
+    var map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: [longitude, latitude], // starting position [lng, lat]
+        zoom: 8 // starting zoom
+    });
+
+// Map Nav Controls
+    map.addControl(new mapboxgl.NavigationControl());
+
+//Starting Draggable Marker (default point)
+    var marker = new mapboxgl.Marker({
+        draggable: true
+    })
+        .setLngLat([longitude, latitude])
+        .addTo(map);
+
+// Adding functionality to draggable marker
+
+    function onDragEnd() {
+        var lngLat = marker.getLngLat();
+        longitude = lngLat.lng;
+        latitude = lngLat.lat;
+        getData();
+    }
+    marker.on('dragend', onDragEnd);
 }
 
 // Trying to manipulate the date() object to work with the weather cards.
@@ -57,52 +86,38 @@ function handleResponse(data) {
 // to the beginning of the currently set month. -MDN
 // The getDate() method returns the day of the month for the specified
 // date according to local time. -MDN
+
 function dateMaker(num) {
     let date = new Date();
     date.setDate(date.getDate() + num)
     return date.toDateString().slice(0, 10);
 }
 
-// Change the background of the Weather Cards depending on the weather conditions
-//
-// $('.card').css(
-//     if (iconCode === "01d") {
-//         "background-image": "linear-gradient(45deg, skyblue, gray)"
-//     }
-// )
+// Change the background of the Weather Cards depending on the iconCode
+function cardColor (code) {
+$('.card').css("background-image", function () {
+        if (code === "01d") {
+            return "linear-gradient(45deg, skyblue, skyblue)";
+        }
+        if (code === "02d" || "03d" || "10d") {
+            return "linear-gradient(45deg, skyblue, grey)";
+        }
+        if (code === "04d" || "09d" || "11d") {
+            return "linear-gradient(45deg, lightgray, darkslategrey)";
+        }
+        if (code === "50d") {
+            return "linear-gradient(45deg, gray, ghostwhite)";
+        }
+        if (code === "13d") {
+            return "linear-gradient(45deg, lightgrey, whitesmoke)";
+        }
+        else {
+            return "linear-gradient(45deg, skyblue, grey)";
+        }
 
-//------- Map -----------------------------------------------------
-
-mapboxgl.accessToken = MAPBOX_TOKEN
-var map = new mapboxgl.Map({
-    container: 'map', // container ID
-    style: 'mapbox://styles/mapbox/streets-v11', // style URL
-    center: [longitude, latitude], // starting position [lng, lat]
-    zoom: 8 // starting zoom
-});
-
-// Map Nav Controls
-map.addControl(new mapboxgl.NavigationControl());
-
-
-//Starting Draggable Marker (default point)
-var marker = new mapboxgl.Marker({
-    draggable: true
-})
-    .setLngLat([longitude, latitude])
-    .addTo(map);
-
-// Adding functionality to draggable marker
-
-function onDragEnd() {
-    var lngLat = marker.getLngLat();
-    longitude = lngLat.lng;
-    latitude = lngLat.lat;
-    getData();
+    }
+)
 }
-
-marker.on('dragend', onDragEnd);
-
 
 //------- Search by City geocode ----------------------------------------
 

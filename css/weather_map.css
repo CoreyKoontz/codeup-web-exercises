@@ -2,9 +2,6 @@ body {
     background-color: #230A59;
 }
 
-.navbar-brand {
-    font-color: #3E38F2;
-}
 .container {
     border: 2px solid red;
 }
@@ -17,8 +14,10 @@ body {
 .card {
     text-align: center;
     align-content: center;
-    background-image: linear-gradient(45deg, skyblue, gray);
+    /*background-color: #82B8D9;*/
+    /*background-image: linear-gradient(45deg, lightgrey, whitesmoke);*/
     padding: 0;
+    box-shadow: 0 0 3pt 2pt #829FD9;
 }
 
 .card-footer {
@@ -27,3 +26,27 @@ body {
     background: none;
 }
 
+#map {
+    border: #829FD9 solid 1px;
+    border-radius: 10px;
+    box-shadow: 0 0 3pt 2pt #829FD9;
+}
+
+* {
+    font-family: 'Cairo', sans-serif;
+}
+
+.date-text {
+    font-weight: bolder;
+}
+
+.navbar {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#btn {
+    color: red;
+    /*outline: 1px solid #F25116;*/
+    box-shadow: 0 0 3pt 2pt #F25116;
+}
