@@ -41,8 +41,8 @@ function handleResponse(data) {
         let itemHtml = "<div class='card col-2' style='width: 17rem'>"
         itemHtml += '<span class="date-text">' + date + '</span>';
         itemHtml += "<img src='img/weather-map-icons/" + iconCode + ".jpg'>" // Refactored the image names of the local icons to work with this
-        itemHtml += '<h5>' + 'H ' + tempHigh + '</h5>';
-        itemHtml += '<h5 class="text-muted">' + 'L ' + tempLow + '</h5>';
+        itemHtml += '<h5 class="highText">' + 'H ' + tempHigh + '</h5>';
+        itemHtml += '<h5 class="lowText">' + 'L ' + tempLow + '</h5>';
         itemHtml += '<p class="card-footer my-1">' + description + '</p>';
         itemHtml += '</div>';
         html += itemHtml;
@@ -54,7 +54,7 @@ function handleResponse(data) {
     mapboxgl.accessToken = MAPBOX_TOKEN
     var map = new mapboxgl.Map({
         container: 'map', // container ID
-        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        style: 'mapbox://styles/ckoontz/ckl1wmjk200c417poqowcyt4u', // style URL
         center: [longitude, latitude], // starting position [lng, lat]
         zoom: 8 // starting zoom
     });
