@@ -1,40 +1,19 @@
 "use strict"
 
-// ------- Query the Weather Map API ----------------------------------------------
-
-// // String Method:
-// // Excluding minutely and hourly
-// // Changing kelvins to imperial: Fahrenheit
-//
-// $.get("https://api.openweathermap.org/data/2.5/onecall?lat=29.4241&lon=-98.4936&units=imperial&exclude=minutely,hourly&appid=" + OWM_TOKEN).done(function(data) {
-//     console.log(data);
-// });
-
-// String and Object Method: Using this method for the sake of readability
-// Excluding minutely and hourly.
-// Changing kelvins to imperial: Fahrenheit
-//
-// $.get("https://api.openweathermap.org/data/2.5/onecall", {
-//     APPID: OWM_TOKEN,
-//     lat: 29.4241,
-//     lon: -98.4936,
-//     units: "imperial",
-//     exclude: ["minutely", "hourly"]
-// }).done(function(data) {
-//     console.log(data);
-// });
-// Having issues with the string and object method of pulling the data. Even though I've included the "exclude: ["minutely", "hourly"]" I'm still seeing it in my console. I'd like to get rid of what we don't need just to keep things clean.
-
-
-// ------- Embedding html into the daily weather display boxes -----------------------
-
-// setting up variables to call the data from Weather Map
+// setting up global variables to call the data from Weather Map
 var longitude = -98.4936
 var latitude = 29.4241
 
-// Get all Data:
+// Calling initial getData function
 getData();
 
+// ------- Query the Weather Map API ----------------------------------------------
+
+// String and Object Method:
+// Using this method for the sake of readability
+// Excluding minutely and hourly.
+// Changing kelvins to imperial: Fahrenheit
+// Defining the 'get' request as a function 'getData' in order to call it multiple times
 function getData() {
     $.get("https://api.openweathermap.org/data/2.5/onecall", {
         APPID: OWM_TOKEN,
@@ -114,24 +93,26 @@ var marker = new mapboxgl.Marker({
     .addTo(map);
 
 // Adding functionality to draggable marker
+
 function onDragEnd() {
     var lngLat = marker.getLngLat();
     longitude = lngLat.lng;
     latitude = lngLat.lat;
-
     getData();
 }
+
 marker.on('dragend', onDragEnd);
 
+
 //------- Search by City geocode ----------------------------------------
-
-
 
 $(".btn").click(function (e) {
     e.preventDefault()
     let searchInput = $("#input").val();
     geocode(searchInput, MAPBOX_TOKEN).then(function (data) {
-        console.log(data);
+        // console.log();
+        longitude = data[0];
+        latitude = data[1];
         getData();
     })
 

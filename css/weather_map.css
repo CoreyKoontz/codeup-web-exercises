@@ -1,5 +1,9 @@
 body {
-    background-color: skyblue;
+    background-color: #230A59;
+}
+
+.navbar-brand {
+    font-color: #3E38F2;
 }
 .container {
     border: 2px solid red;
