@@ -56,7 +56,7 @@ function handleResponse(data) {
         container: 'map', // container ID
         style: 'mapbox://styles/ckoontz/ckl1wmjk200c417poqowcyt4u', // style URL
         center: [longitude, latitude], // starting position [lng, lat]
-        zoom: 8 // starting zoom
+        zoom: 9 // starting zoom
     });
 
 // Map Nav Controls
@@ -94,30 +94,30 @@ function dateMaker(num) {
 }
 
 // Change the background of the Weather Cards depending on the iconCode
-function cardColor (code) {
-$('.card').css("background-image", function () {
-        if (code === "01d") {
-            return "linear-gradient(45deg, skyblue, skyblue)";
-        }
-        if (code === "02d" || "03d" || "10d") {
-            return "linear-gradient(45deg, skyblue, grey)";
-        }
-        if (code === "04d" || "09d" || "11d") {
-            return "linear-gradient(45deg, lightgray, darkslategrey)";
-        }
-        if (code === "50d") {
-            return "linear-gradient(45deg, gray, ghostwhite)";
-        }
-        if (code === "13d") {
-            return "linear-gradient(45deg, lightgrey, whitesmoke)";
-        }
-        else {
-            return "linear-gradient(45deg, skyblue, grey)";
-        }
-
-    }
-)
-}
+// function cardColor (code) {
+// $('.card').css("background-image", function () {
+//         if (code === "01d") {
+//             return "linear-gradient(45deg, skyblue, skyblue)";
+//         }
+//         if (code === "02d" || "03d" || "10d") {
+//             return "linear-gradient(45deg, skyblue, grey)";
+//         }
+//         if (code === "04d" || "09d" || "11d") {
+//             return "linear-gradient(45deg, lightgray, darkslategrey)";
+//         }
+//         if (code === "50d") {
+//             return "linear-gradient(45deg, gray, ghostwhite)";
+//         }
+//         if (code === "13d") {
+//             return "linear-gradient(45deg, lightgrey, whitesmoke)";
+//         }
+//         else {
+//             return "linear-gradient(45deg, skyblue, grey)";
+//         }
+//
+//     }
+// )
+// }
 
 //------- Search by City geocode ----------------------------------------
 

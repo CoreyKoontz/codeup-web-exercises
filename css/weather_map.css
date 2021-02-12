@@ -15,9 +15,9 @@ body {
     text-align: center;
     align-content: center;
     /*background-color: #044BD9;*/
-    background-image: linear-gradient(180deg, #230A59, grey);
+    background-image: linear-gradient(180deg, #230A59, lightslategrey);
     padding: 0;
-    box-shadow: 0 0 3pt 2pt #829FD9;
+    /*box-shadow: 0 0 1pt 2pt #829FD9;*/
     border-radius: 20px;
 }
 
@@ -30,7 +30,7 @@ body {
 #map {
     /*border: #829FD9 solid 1px;*/
     border-radius: 20px;
-    box-shadow: 0 0 3pt 2pt #829FD9;
+    box-shadow: 0 0 3pt 2pt lightslategrey;
 }
 
 * {
