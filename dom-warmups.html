@@ -17,11 +17,19 @@
     "use strict";
 
     // TODO: add the needed JS so that the number selected in the number input will be added to the number in the span
+
+    // Expanded:
     $("#add-btn").click(function() {
-        var numberToAdd = parseInt($("#number").val());
-        var currentNumber = parseInt($("#sum-output").text());
+        let numberToAdd = parseInt($("#number").val());
+        let currentNumber = parseInt($("#sum-output").text());
         $("#sum-output").text(currentNumber + numberToAdd);
-    })
+    });
+
+    // // Collapsed:
+    // $("#add-btn").click(function() {
+    //     $("#sum-output").text((parseInt($("#sum-output").text())) + (parseInt($("#number").val())));
+    // });
+
 </script>
 
 </body>
