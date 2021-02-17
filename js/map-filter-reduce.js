@@ -73,6 +73,8 @@ console.log(longestEmail);
 
 
 // .reduce
-let userNames = users.reduce((name, user) =>
-    users.name);
+let userNames = users.reduce((total, user) => {
+    user.name.forEach(name => {total.push(name)})
+    return total;
+}, [])
 console.log(userNames);
