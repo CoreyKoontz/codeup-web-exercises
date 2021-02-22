@@ -3,32 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <title>DOM Manipulation Warmups</title>
+    <style>
+        .letter {
+            cursor: crosshair;
+        }
+        .title-letter {
+            color: firebrick;
+            font-size: 3em;
+        }
+    </style>
 </head>
 <body>
 
-<h1>The sum is: <span id="sum-output">0</span></h1>
+<h1>
+    <span class="letter">D</span><span class="letter">O</span><span class="letter">M</span>
+    <span class="letter">W</span><span class="letter">a</span><span class="letter">r</span><span class="letter">m</span>
+    <span class="letter">U</span><span class="letter">p</span><span class="letter">s</span>
+</h1>
+
+<h3>Letter from title in lowercase: <span class="title-letter"></span></h3>
+
+<h3>The sum is: <span id="sum-output">0</span></h3>
+
 <label for="number">Number</label>
-<input id="number" type="number" name="number" min="0" max="5">
+<input id="number" type="number" name="number" min="0" max="5" value="0">
 <button id="add-btn">Add</button>
 
 <!--  Include the CDN script for jQuery below -->
-<script src="js/jquery-3.5.1.js"></script>
+<script
+        src="http://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
 <script>
-    "use strict";
+
+        "use strict";
 
     // TODO: add the needed JS so that the number selected in the number input will be added to the number in the span
 
-    // Expanded:
-    $("#add-btn").click(function() {
-        let numberToAdd = parseInt($("#number").val());
-        let currentNumber = parseInt($("#sum-output").text());
-        $("#sum-output").text(currentNumber + numberToAdd);
-    });
+        $('#add-btn').click(function() {
+            var numVal = parseInt($('#number').val());
+            var currVal = parseInt($('#sum-output').text());
+            $('#sum-output').text(numVal + currVal);
+        });
 
-    // // Collapsed:
-    // $("#add-btn").click(function() {
-    //     $("#sum-output").text((parseInt($("#sum-output").text())) + (parseInt($("#number").val())));
-    // });
+    /*
+    TODO: add the needed JS so that when the cursor hovers over a letter in the h1 title,
+     the letter will appear in the span with a class of `title-letter`, in lowercase.
+     When the cursor is not hovering over a letter in the h1 title, no letter should be
+     displayed in the span with a class of `title-letter`.
+    */
+        $('.letter').hover(
+            function () {
+                $('.title-letter').text($(this).text().toLowerCase())
+            },
+            function () {
+                $('.title-letter').text('');
+            }
+        );
+
+
 
 </script>
 
