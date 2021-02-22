@@ -38,7 +38,7 @@ const users = [
 
 
 // .filter
-const leastThreeLang = users.filter(user =>
+const leastThreeLang = users.filter( user =>
     user.languages.length >= 3);
 console.log(leastThreeLang);
 //(3) [{…}, {…}, {…}]
@@ -50,7 +50,7 @@ console.log(leastThreeLang);
 
 
 // .map
-const userEmails = users.map(user =>
+const userEmails = users.map( user =>
     user.email);
 console.log(userEmails);
 //  (5)["ryan@codeup.com", "luis@codeup.com", "zach@codeup.com",
@@ -73,8 +73,8 @@ console.log(longestEmail);
 
 
 // .reduce
-let userNames = users.reduce((total, user) => {
-    user.name.forEach(name => {total.push(name)})
-    return total;
-}, [])
-console.log(userNames);
+let userNames = users.reduce((newArr, user) => {
+    newArr.push(user.name);
+    return newArr;
+}, []);
+// Got it to return the array of names but not able to insert it into a string
