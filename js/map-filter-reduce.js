@@ -78,3 +78,13 @@ let userNames = users.reduce((newArr, user) => {
     return newArr;
 }, []);
 // Got it to return the array of names but not able to insert it into a string
+
+
+
+// ========================= LECTURE NOTES =========================================
+//23 Feb 2021
+
+// -Both functions map() and filter() you are getting back a new array.
+//      - So we have to save that return value somewhere. most likely a variable.
+//
+
