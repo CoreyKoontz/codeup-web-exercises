@@ -53,10 +53,9 @@
 
         "use strict";
 
-        const showBtn = $("#showBtn"); // 2. added jQuery selector with [0] to select a node instead of collection
-                                          // 3. changed to const
+        const showBtn = document.getElementById('showBtn') // 3. changed to const
 
-        let movies = [ // 4. changed var to let
+        const movies = [ // 4. changed var to cost
             {
                 name: "LOTR",
                 year: "2001",
@@ -74,24 +73,29 @@
             }
         ];
 
-        const buildMovieHTML = movie => { // 5. changed var to const and changed to arrow function
-            let html = ""; // 6. changed var to let
-            html += '<ul><li>' + movie.name;
-            html +=  '</li><li>' + movie.year;
-            html += '</li><li>' + movie.genre + '</li></ul>';
-            return html;
-        }
+        // rebuilding the buildMovieHTML function with es6
+        // object destructuring and an arrow function
+        const buildMovieHTML = ({name, year, genre}) => {
+            return `<ul><li>${name}</li><li>${year}</li><li>${genre}</li></ul>`;
+        };
+        // var buildMovieHTML = movie => { // changed var to const and changed to arrow function
+        //     var html = ""; // 6. changed var to let
+        //     html += '<ul><li>' + movie.name;
+        //     html +=  '</li><li>' + movie.year;
+        //     html += '</li><li>' + movie.genre + '</li></ul>';
+        //     return html;
+        // }
 
-        const addHTMLToPage = (movies) => { // 7. changed var to const and added arrow function
+        const addHTMLToPage = (movies) => { // changed var to const and added arrow function
             let movieItems = document.getElementsByClassName('movie');
             let i = 0;
-            for (let movieItems of movies) {
-                movieItems.innerHTML = buildMovieHTML(movies[i]);
+            for (let movieItem of movieItems) {
+                movieItem.innerHTML = buildMovieHTML(movies[i]);
                 ++i;
             }
         }
 
-        showBtn.on("click", function() { // 8. added jQuery .on method
+        showBtn.addEventListener("click", () => {
             addHTMLToPage(movies);
         });
 
