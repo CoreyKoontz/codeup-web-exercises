@@ -39,7 +39,7 @@ const users = [
 
 // TODO .filter -  create an array of user objects where each user object has at least 3 languages in the languages array:
 
-let leastThreeLang = users.filter( user => {
+let leastThreeLang = users.filter(user => {
     return user.languages.length >= 3
 });
 
@@ -55,7 +55,7 @@ console.log(leastThreeLang);
 
 // TODO .map - create an array of strings where each element is a user's email address:
 
-let userEmails = users.map( user => {
+let userEmails = users.map(user => {
     return user.email
 });
 
@@ -80,7 +80,7 @@ console.log(totalYearsOfExperience);
 // TODO .reduce - get the longest email from the list of users:
 
 let longestEmail = userEmails.reduce((a, b) => {
-   return a.length > b.length ? a : b
+    return a.length > b.length ? a : b
 });
 
 console.log(longestEmail);
@@ -92,14 +92,14 @@ console.log(longestEmail);
 //  Example: Your instructors are: ryan, luis, zach, fernando, justin.
 
 // TODO: Put lines 91-100 into a single function
-let userNames = users.reduce(function (newArr, user) {
-    newArr.push(user.name);
-    return newArr;
-}, []).join(', ');
-
-function instructorNames () {
+function instructorNames() {
+    let userNames = users.reduce(function (newArr, user) {
+        newArr.push(user.name);
+        return newArr;
+    }, []).join(', ');
     return `Your instructors are: ${userNames}.`;
 }
+
 //Output: "Your instructors are: ryan, luis, zach, fernando, justin."
 
 
@@ -107,7 +107,6 @@ function instructorNames () {
 // let userNames = users.reduce(function (total, user) {
 //     return total + " " + user.name;
 // }, " ");
-
 
 
 // ========================= LECTURE NOTES =========================================
