@@ -95,12 +95,10 @@ console.log(longestEmail);
 let userNames = users.reduce(function (newArr, user) {
     newArr.push(user.name);
     return newArr;
-}, []);
-
-let userNameStr = userNames.join(', ');
+}, []).join(', ');
 
 function instructorNames () {
-    return `Your instructors are: ${userNameStr}.`;
+    return `Your instructors are: ${userNames}.`;
 }
 //Output: "Your instructors are: ryan, luis, zach, fernando, justin."
 
