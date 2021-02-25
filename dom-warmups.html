@@ -71,15 +71,16 @@
 
     //-------------TODO: Go back and get this single eventListener to work
         $('li').on('click', function () {
-            let binaryVal = true
+            let binaryVal;
             if (binaryVal = true) {
                 $(this).text(1);
                 binaryVal = !binaryVal;
             }
-            if (binaryVal = false) {
+            else {
                 $(this).text(0);
-                binaryVal = !binaryVal;
+
             }
+            binaryVal = !binaryVal;
         })
     }
 

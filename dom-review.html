@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Review</title>
+    <style>
+
+        .toggleStyle {
+            content:"Hovering";
+            border: 1px solid blue;
+
+        }
+    </style>
+</head>
+<body>
+
+<div id="set-one-container">
+    <h2>List Item Selected: <span class="show-list-item-text"></span></h2>
+    <ul class="data-example-container">
+        <li class="data-example" data-value="1">One</li>
+        <li class="data-example" data-value="2">Two</li>
+        <li class="data-example" data-value="3">Three</li>
+        <li class="data-example" data-value="4">Four</li>
+    </ul>
+    <h2>Attribute Value: <span id="show-data-attr"></span></h2>
+    <h2>List Item Selected: <span class="show-list-item-text"></span></h2>
+</div>
+
+<hr/>
+
+<div id="set-two-container">
+    <div id="hover-container">
+        <h2>Child 1</h2>
+        <h2>Child 2</h2>
+        <h2>Child 3</h2>
+        <p>Child 4</p>
+        <div>
+            Child 5
+            <p>
+                Child... 6?
+            </p>
+        </div>
+    </div>
+</div>
+
+<hr/>
+
+<div id="set-three-container">
+    <ul>
+        <li class="background-color-change">pick me!</li>
+        <li class="background-color-change">pick me!</li>
+        <li class="background-color-change">pick me!</li>
+        <li class="background-color-change">pick me!</li>
+        <li class="background-color-change">pick me!</li>
+    </ul>
+</div>
+
+<hr/>
+
+<div id="set-four-container">
+
+    <input id="input">
+    <button id="concat-string">Concat</button>
+    <h3 id="output">Concat String:</h3>
+
+</div>
+
+<hr/>
+
+
+<script src="js/jquery-3.5.1.js"></script>
+<script src="js/dom-review.js"></script>
+</body>
+</html>
