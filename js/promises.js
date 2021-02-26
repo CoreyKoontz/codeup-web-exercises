@@ -8,54 +8,79 @@
 // a promise that resolves returning just the date of the last commit
 // that user made. Reference the github api documentation to achieve this.
 
-// uncomment and add the token to your requests like this:
-//fetch(url, {'headers': { 'Authorization' : 'token YOUR_TOKEN_HERE'}})
+////Refactored after walk-through:
+// {
+//     function lastCommit(userName) {
+//         fetch(`https://api.github.com/users/${userName}/events/public`, {'headers': {'Authorization': "GIT_TOKEN"}})
+//             .then(response => response.json())
+//             .then(events => {
+//                 let mostRecentEvent = events.find((event) => event.type === 'PushEvent');
+//                 let mostRecentPush = new Date(mostRecentEvent['created_at']).toDateString();
+//                 return mostRecentPush
+//             });
+//     }
+//
+//     lastCommit('CoreyKoontz')
+//         .then(console.log)
+//         .catch(console.error);
+//
+// }
 
-// fetch('https://api.github.com/users')
-//     .then(response => {
-//         response.json()
-//             .then(users => {
-//                 users.forEach(user => {
-//                     console.log(user) // here get date of users last commit *CommitCommentEvent
-//                 })
-//             })
-//     })
+function lastCommit(userName) {
+    fetch(`https://api.github.com/users/${userName}/events/public`, {'headers': {'Authorization': "GIT_TOKEN"}})
+        .then(response => response.json()
+            .then(events => {
+                for(let event of events) {
+                    if (event.type === "PushEvent") {
+                        let lastPush = event
+                        console.log(lastPush[0]["created_at"]);
+                    }
+
+                }
+            })
+        )
+}
+
+
+lastCommit('CoreyKoontz')
+
+// let mostRecent = events.find((event) =>)
 //------------------ Create Your Own Promise ------------------------------------
 
-function wait (num) {
-    let milSec = num * 1000;
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            console.log(`You'll see this after ${num} milliseconds`)
-        }, milSec);
-    });
-};
-
-wait(2).then( data => {
-    console.log(data);
-}).catch( err => {
-    console.error(err);// console.error gives the log a error styling (optional)
-});
+// function wait(num) {
+//     // let milSec = num * 1000;
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             console.log(`You'll see this after ${num} milliseconds`)
+//         }, num);
+//     });
+// };
+//
+// wait(2).then(data => {
+//     console.log(data);
+// }).catch(err => {
+//     console.error(err);// console.error gives the log a error styling (optional)
+// });
 
 
 //------------------ Lecture Notes ----------------------------------------------
 // Feb 24, 2021
 
 //TODO------- What are JS promises?
-    // - a special type of object for working with asynchronous JS
-    // - it has 3 stages: pending, resolve, rejected
-    // - like any other value, may be passed as a argument to a function / returned as an output
+// - a special type of object for working with asynchronous JS
+// - it has 3 stages: pending, resolve, rejected
+// - like any other value, may be passed as a argument to a function / returned as an output
 //TODO------- Why should I care about JS promises?
-    // - used to write cleaner asynchronous code (avoid callback hell!)
-    // - promises are very common in both client and servers side JS
+// - used to write cleaner asynchronous code (avoid callback hell!)
+// - promises are very common in both client and servers side JS
 //TODO------- How do JS promises relate to what I already know?
-    // - much like an AJAX request from jQuery
+// - much like an AJAX request from jQuery
 //TODO------- How do I create and use JS promises?
-    // - create using new Promise((resolve, reject) => {})
-    // - handle using .then() and .catch()
+// - create using new Promise((resolve, reject) => {})
+// - handle using .then() and .catch()
 //TODO------- How will I likely use promises in the future (what is the real world application)?
-    // - Fetch API and other APIs and libraries that work with promise values
-    // - likely won’t be defining many custom promises
+// - Fetch API and other APIs and libraries that work with promise values
+// - likely won’t be defining many custom promises
 
 // Working with promises looks a lot like using AJAX in jQuery
 
@@ -78,7 +103,6 @@ wait(2).then( data => {
 //     .catch(function(jqXHR, message) {
 //         console.log(message);
 //     });
-
 
 
 // ============ Basic Example of Promise Creation and Handling
@@ -176,10 +200,6 @@ wait(2).then( data => {
 // });
 
 
-
-
-
-
 // ====================================== FETCH API
 
 
@@ -195,7 +215,15 @@ wait(2).then( data => {
 //     });
 
 // Fetch API Version...
-
+// fetch('https://swapi.dev/api/people/1')
+//     .then(response => response.json())
+//     .then(data => {
+//         return fetch(data.homeworld);
+//     })
+//     .then(response => response.json())
+//     .then(data => {
+//         // not completed
+//     })
 
 // -------- MINI EXERCISE 3
 
@@ -203,8 +231,15 @@ wait(2).then( data => {
     Log the text property of the first cat fact object. Be sure to log possible errors in a catch.
  */
 
-// const catFactsURL = 'https://cat-fact.herokuapp.com/facts';
-
+// fetch('https://cat-fact.herokuapp.com/facts')
+//     .then(response => response.json())
+//     .then(data => {
+//         const firstCatFact = data[0];
+//         const {text} = firstCatFact
+//         console.log(text);
+//     })
+//     .catch(console.error)
+//
 
 // Fetch API POST example
 
@@ -227,20 +262,19 @@ wait(2).then( data => {
 /* TODO: Create a new endpoint on https://hookbin.com/ and use fetch to send some POST requests.
     Experiment with sending different shapes of data in the body of the request.
  */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// let userPassword = () => {
+//
+//     fetch('https://hookb.in/kxRmYZmeqmIrOOoLb6Dw', {
+//         method: 'POST',
+//         // headers: {
+//         //     'Content-Type': 'application/json'
+//         // },
+//         body: JSON.stringify({
+//             username: "testUser",
+//             password: "testPassword"
+//         })
+//     })
+// }
 //  ============ NY Times Articles Based on Forecast of Current Location
 
 // function getForecast(coord) {
@@ -289,7 +323,6 @@ wait(2).then( data => {
 //     });
 
 
-
 // ====================================== ADDITIONAL TOPICS
 
 // ============ Promise Chaining
@@ -308,7 +341,6 @@ wait(2).then( data => {
 //     .then(countSlow)
 //     .then(countSlow)
 //     .then(countSlow);
-
 
 
 // ============ Promise.resolve() and Promise.reject()
@@ -353,7 +385,6 @@ wait(2).then( data => {
 // }).catch((err) => {
 //     console.log(err)
 // });
-
 
 
 // ============ Promise.race()
